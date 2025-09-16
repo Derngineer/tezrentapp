@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function DownloadSection() {
   return (
-    <section className="py-20 bg-blue-50 flex justify-center">
+    <section className="py-20 bg-blue-50 flex flex-col items-center justify-center">
       <div className="flex flex-col items-center w-full">
         <h2 className="text-5xl sm:text-6xl font-extrabold text-blue-900 mb-8 text-center">
           Get the App Now!
@@ -49,6 +49,9 @@ export default function DownloadSection() {
           </button>
         </div>
       </div>
+      <footer className="py-6 w-full text-center bg-blue-50 text-sm mt-16">
+        &copy; {new Date().getFullYear()} Machinery Rental with Tezrent<sup>™</sup>. All rights reserved .
+      </footer>
     </section>
   );
 }
