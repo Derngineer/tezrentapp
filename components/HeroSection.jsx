@@ -1,13 +1,58 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaAngleDown, FaPlay } from "react-icons/fa";
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
-  
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const videoRef = useRef(null);
+
   useEffect(() => {
     setIsVisible(true);
+
+    const video = videoRef.current;
+    if (video) {
+      // Handle video loading events
+      const handleCanPlay = () => {
+        setIsLoading(false);
+        // Auto-play when loaded
+        video.play()
+          .then(() => setIsPlaying(true))
+          .catch(error => {
+            console.error("Autoplay failed:", error);
+            // Keep the play button visible for user interaction
+          });
+      };
+
+      const handleError = (error) => {
+        console.error("Video error:", error);
+        setIsLoading(false);
+      };
+
+      video.addEventListener('canplaythrough', handleCanPlay);
+      video.addEventListener('error', handleError);
+      
+      // Try to load the video
+      video.load();
+
+      return () => {
+        video.removeEventListener('canplaythrough', handleCanPlay);
+        video.removeEventListener('error', handleError);
+      };
+    }
   }, []);
+
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play().catch(e => console.error("Play failed:", e));
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   return (
     <section
@@ -83,49 +128,67 @@ export default function HeroSection() {
           </div>
         </div>
         
-        {/* Right: Video Placeholder */}
+        {/* Right: Video Container - Enhanced Mobile Device Style */}
         <div 
           className={`w-full md:w-1/2 flex items-center justify-center mt-16 md:mt-0 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
           style={{transitionDelay: "200ms"}}
         >
-          <div className="relative w-full max-w-md aspect-[9/16] md:aspect-[3/4] lg:aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-            {/* Video placeholder - replace with actual video */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 to-blue-950 flex items-center justify-center">
+          {/* Mobile device frame */}
+          <div className="relative w-full max-w-[320px] aspect-[886/1920] rounded-[40px] overflow-hidden shadow-2xl border-4 border-gray-800 bg-gray-800">
+            {/* Inner bezel */}
+            <div className="absolute inset-0 rounded-[36px] overflow-hidden border border-gray-700 z-10">
+              {/* Loading indicator */}
+              {isLoading && (
+                <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+                  <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+              )}
+              
+              {/* Video element */}
+              <video 
+                ref={videoRef}
+                className="absolute inset-0 w-full h-full object-cover"
+                poster="/videos/tezrent-poster.jpg"
+                playsInline
+                muted
+                loop
+                autoPlay
+              >
+                <source src="/videos/video.mp4" type="video/mp4" />
+                <source src="/videos/video.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+              
               {/* Play button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center backdrop-blur-sm bg-black/10">
-                <div className="w-20 h-20 rounded-full bg-blue-500/80 flex items-center justify-center backdrop-blur-sm shadow-xl p-5 cursor-pointer hover:bg-blue-600/90 transition-all duration-300 group">
-                  <FaPlay className="text-white text-2xl ml-1 group-hover:scale-110 transition-all" />
+              <div 
+                className="absolute inset-0 flex items-center justify-center backdrop-blur-sm bg-black/10 transition-opacity duration-300" 
+                style={{ opacity: isPlaying ? 0 : 1, pointerEvents: isPlaying ? 'none' : 'auto' }}
+                onClick={togglePlayPause}
+              >
+                <div className="w-16 h-16 rounded-full bg-blue-500/80 flex items-center justify-center backdrop-blur-sm shadow-xl p-4 cursor-pointer hover:bg-blue-600/90 transition-all duration-300 group">
+                  <FaPlay className="text-white text-xl ml-1 group-hover:scale-110 transition-all" />
                 </div>
               </div>
               
               {/* App name watermark */}
-              <div className="absolute top-8 left-0 right-0 flex justify-center">
+              <div className="absolute top-6 left-0 right-0 flex justify-center z-10">
                 <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                   <span className="text-white font-semibold">Tezrent Demo</span>
                 </div>
               </div>
-              
-              {/* Mockup content - this will be replaced by your actual video */}
-              <div className="w-3/4 h-3/4 flex flex-col">
-                <div className="flex-1 grid grid-cols-2 gap-4 p-4">
-                  {[1, 2, 3, 4].map((item) => (
-                    <div key={item} className="bg-white/10 rounded-xl p-2 flex flex-col animate-pulse" style={{animationDelay: `${item * 0.2}s`, animationDuration: '3s'}}>
-                      <div className="flex-1 bg-blue-400/20 rounded-lg mb-2"></div>
-                      <div className="h-3 w-full bg-white/20 rounded-full"></div>
-                    </div>
-                  ))}
-                </div>
-                <div className="h-16 bg-blue-800/50 border-t border-white/10 flex items-center justify-around px-4">
-                  {[1, 2, 3, 4].map((item) => (
-                    <div key={item} className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
-                      <div className="w-4 h-4 rounded-sm bg-white/30"></div>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
+            
+            {/* Phone details - top notch */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-7 bg-gray-800 rounded-b-xl z-20"></div>
+            
+            {/* Power button */}
+            <div className="absolute top-24 -right-1 w-1.5 h-12 bg-gray-700 rounded-l-md z-20"></div>
+            
+            {/* Volume buttons */}
+            <div className="absolute top-48 -left-1 w-1.5 h-8 bg-gray-700 rounded-r-md z-20"></div>
+            <div className="absolute top-60 -left-1 w-1.5 h-8 bg-gray-700 rounded-r-md z-20"></div>
           </div>
         </div>
       </div>
