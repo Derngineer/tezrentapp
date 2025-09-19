@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FaCheck, FaSpinner, FaUser, FaEnvelope, FaPhone, FaBuilding, FaComment } from "react-icons/fa";
+import Image from "next/image";
 
 export default function ClientForm() {
   const [formState, setFormState] = useState({
@@ -324,86 +325,52 @@ export default function ClientForm() {
           </div>
         </div>
         
-        {/* Right: Mobile Mockup */}
-        <div className="hidden md:flex flex-col justify-center items-center">
-          <div className="w-[280px] h-[570px] bg-gradient-to-b from-gray-800 to-gray-950 rounded-[40px] overflow-hidden shadow-2xl border border-gray-700 relative">
-            {/* Phone notch */}
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-36 h-6 bg-black rounded-b-xl z-10"></div>
-            
-            {/* Screen content */}
-            <div className="absolute inset-[12px] rounded-[32px] overflow-hidden bg-gradient-to-b from-blue-900 to-blue-950 p-4">
-              {/* Status bar */}
-              <div className="h-6 flex justify-between items-center text-white/80 text-xs px-4">
-                <span>9:41 AM</span>
-                <div className="flex gap-1">
-                  <span>4G</span>
-                  <span>●●●●</span>
-                </div>
-              </div>
-              
-              {/* App header */}
-              <div className="mt-6 flex justify-between items-center px-2">
-                <div className="w-8 h-8 rounded-lg bg-blue-800/50 flex items-center justify-center">
-                  <div className="w-3 h-3 bg-white/70"></div>
-                </div>
-                <span className="text-white font-medium">Tezrent</span>
-                <div className="w-8 h-8 rounded-full bg-blue-700/30 flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-white/70"></div>
-                </div>
-              </div>
-              
-              {/* Search bar */}
-              <div className="mt-6 bg-white/10 rounded-lg p-3 flex items-center">
-                <div className="w-4 h-4 rounded-full bg-white/40 mr-3"></div>
-                <div className="h-3 w-3/4 bg-white/20 rounded-full"></div>
-              </div>
-              
-              {/* Machinery categories */}
-              <div className="mt-6">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="h-3 w-1/3 bg-white/30 rounded-full"></div>
-                  <div className="h-2 w-10 bg-white/20 rounded-full"></div>
-                </div>
-                <div className="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
-                  {[...Array(4)].map((_, i) => (
-                    <div key={i} className={`flex-shrink-0 w-16 h-16 rounded-xl flex flex-col items-center justify-center ${i === 0 ? 'bg-blue-500/30' : 'bg-white/10'}`}>
-                      <div className="w-6 h-6 rounded-md bg-white/30 mb-2"></div>
-                      <div className="h-2 w-10 bg-white/20 rounded-full"></div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Featured equipment */}
-              <div className="mt-6">
-                <div className="h-3 w-1/3 bg-white/30 rounded-full mb-3"></div>
-                <div className="grid grid-cols-2 gap-3">
-                  {[...Array(4)].map((_, i) => (
-                    <div key={i} className="bg-white/10 rounded-xl p-3 h-32 flex flex-col">
-                      <div className="h-16 bg-blue-700/20 rounded-lg mb-3"></div>
-                      <div className="h-2 w-4/5 bg-white/30 rounded-full mb-2"></div>
-                      <div className="h-2 w-1/2 bg-white/20 rounded-full"></div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Bottom nav */}
-              <div className="absolute bottom-0 left-0 right-0 h-16 bg-blue-900/60 backdrop-blur-sm flex items-center justify-around px-6 border-t border-white/10">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className={`w-10 h-10 rounded-full flex items-center justify-center ${i === 0 ? 'bg-blue-700/40' : ''}`}>
-                    <div className={`w-4 h-4 rounded-sm ${i === 0 ? 'bg-white/80' : 'bg-white/30'}`}></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Home indicator */}
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full"></div>
+        {/* Right: Stacked Mobile Mockups - Updated Version */}
+        <div className="hidden md:flex flex-col justify-center items-center relative h-[680px] w-[460px]">
+          {/* Bottom image - only shows partially */}
+          <div className="absolute bottom-12 right-4 z-10">
+            <Image
+              src="/M4.png"
+              alt="Tezrent mobile app mockup 1"
+              width={240}
+              height={480}
+              className="rounded-3xl shadow-lg"
+            />
           </div>
           
-          {/* Reflection effect */}
-          <div className="w-[240px] h-[40px] bg-gradient-to-b from-gray-800/20 to-transparent rounded-[50%] mt-4 blur-md"></div>
+          {/* Middle image - offset slightly */}
+          <div className="absolute bottom-20 left-4 z-20">
+            <Image
+              src="/M5.png"
+              alt="Tezrent mobile app mockup 2"
+              width={240}
+              height={480}
+              className="rounded-3xl shadow-lg"
+            />
+          </div>
+          
+          {/* Top image - transparent background */}
+          <div className="absolute top-0 left-[80px] z-30">
+            <div className="w-[260px] h-[520px] rounded-[40px] overflow-hidden shadow-xl">
+              {/* Screen content */}
+              <div className="absolute inset-0 rounded-[32px] overflow-hidden">
+                <Image
+                  src="/M8.png" 
+                  alt="Tezrent mobile app mockup 3"
+                  width={260}
+                  height={520}
+                  style={{ objectFit: "contain" }}
+                  className="rounded-[30px]"
+                />
+              </div>
+              
+              {/* Home indicator */}
+              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full z-20"></div>
+            </div>
+          </div>
+          
+          {/* Subtle shadow effect */}
+          <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-[320px] h-[40px] bg-black/10 blur-xl rounded-[50%]"></div>
         </div>
       </div>
     </section>

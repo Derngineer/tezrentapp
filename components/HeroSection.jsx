@@ -128,67 +128,37 @@ export default function HeroSection() {
           </div>
         </div>
         
-        {/* Right: Video Container - Enhanced Mobile Device Style */}
+        {/* Right: Floating Video Container */}
         <div 
           className={`w-full md:w-1/2 flex items-center justify-center mt-16 md:mt-0 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
           style={{transitionDelay: "200ms"}}
         >
-          {/* Mobile device frame */}
-          <div className="relative w-full max-w-[320px] aspect-[886/1920] rounded-[40px] overflow-hidden shadow-2xl border-4 border-gray-800 bg-gray-800">
-            {/* Inner bezel */}
-            <div className="absolute inset-0 rounded-[36px] overflow-hidden border border-gray-700 z-10">
-              {/* Loading indicator */}
-              {isLoading && (
-                <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-                  <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-                </div>
-              )}
-              
-              {/* Video element */}
+          {/* Video container - shadows removed */}
+          <div className="relative">
+            {/* Video element */}
+            <div className="relative z-10">
               <video 
                 ref={videoRef}
-                className="absolute inset-0 w-full h-full object-cover"
-                poster="/videos/tezrent-poster.jpg"
+                autoPlay 
+                loop 
+                muted 
                 playsInline
-                muted
-                loop
-                autoPlay
+                className="rounded-[2.5rem] shadow-xl w-[280px] h-[560px] object-cover"
               >
-                <source src="/videos/video.mp4" type="video/mp4" />
-                <source src="/videos/video.webm" type="video/webm" />
+                <source src="/videos/video2.webm" type="video/webm" />
+                <source src="/videos/video2.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               
-              {/* Play button overlay */}
-              <div 
-                className="absolute inset-0 flex items-center justify-center backdrop-blur-sm bg-black/10 transition-opacity duration-300" 
-                style={{ opacity: isPlaying ? 0 : 1, pointerEvents: isPlaying ? 'none' : 'auto' }}
-                onClick={togglePlayPause}
-              >
-                <div className="w-16 h-16 rounded-full bg-blue-500/80 flex items-center justify-center backdrop-blur-sm shadow-xl p-4 cursor-pointer hover:bg-blue-600/90 transition-all duration-300 group">
-                  <FaPlay className="text-white text-xl ml-1 group-hover:scale-110 transition-all" />
+              {/* Loading indicator */}
+              {isLoading && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-[2.5rem] z-20">
+                  <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                 </div>
-              </div>
-              
-              {/* App name watermark */}
-              <div className="absolute top-6 left-0 right-0 flex justify-center z-10">
-                <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <span className="text-white font-semibold">Tezrent Demo</span>
-                </div>
-              </div>
+              )}
             </div>
-            
-            {/* Phone details - top notch */}
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-7 bg-gray-800 rounded-b-xl z-20"></div>
-            
-            {/* Power button */}
-            <div className="absolute top-24 -right-1 w-1.5 h-12 bg-gray-700 rounded-l-md z-20"></div>
-            
-            {/* Volume buttons */}
-            <div className="absolute top-48 -left-1 w-1.5 h-8 bg-gray-700 rounded-r-md z-20"></div>
-            <div className="absolute top-60 -left-1 w-1.5 h-8 bg-gray-700 rounded-r-md z-20"></div>
           </div>
         </div>
       </div>
@@ -196,7 +166,6 @@ export default function HeroSection() {
       {/* Scroll indicator */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
         <span className="text-white/50 text-xs uppercase tracking-widest mb-2">Scroll</span>
-        <FaAngleDown className="text-white/50 animate-bounce" />
       </div>
     </section>
   );

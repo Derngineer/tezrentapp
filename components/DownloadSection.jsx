@@ -113,7 +113,7 @@ export default function DownloadSection() {
           </div>
           
           {/* Notification signup - Widened */}
-          <div className="mt-16 max-w-xl w-full"> {/* Changed from max-w-md to max-w-xl */}
+          <div className="mt-16 max-w-xl w-full">
             <div className="bg-white rounded-2xl shadow-lg p-8 relative z-10">
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
@@ -181,11 +181,11 @@ export default function DownloadSection() {
                     <div className="ml-3 text-sm">
                       <label htmlFor="terms" className="text-gray-500">
                         I agree to the{" "}
-                        <Link href="/terms" className="text-blue-600 hover:text-blue-800 underline">
+                        <Link href="#terms" className="text-blue-600 hover:text-blue-800 underline">
                           Terms and Conditions
                         </Link>
                         {" "}and{" "}
-                        <Link href="/privacy" className="text-blue-600 hover:text-blue-800 underline">
+                        <Link href="#privacy" className="text-blue-600 hover:text-blue-800 underline">
                           Privacy Policy
                         </Link>
                       </label>
@@ -237,13 +237,26 @@ export default function DownloadSection() {
             <div>
               <h4 className="font-semibold text-blue-900 mb-4">Legal</h4>
               <ul className="space-y-2">
-                {["Terms", "Privacy", "Cookies", "Licenses"].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-gray-600 hover:text-blue-600 transition">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link href="#terms" className="text-gray-600 hover:text-blue-600 transition">
+                    Terms
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#privacy" className="text-gray-600 hover:text-blue-600 transition">
+                    Privacy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#cookies" className="text-gray-600 hover:text-blue-600 transition">
+                    Cookies
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#licenses" className="text-gray-600 hover:text-blue-600 transition">
+                    Licenses
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

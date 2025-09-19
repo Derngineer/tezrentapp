@@ -8,6 +8,7 @@ import HeroSection from "../components/HeroSection";
 import MobileMockups from "@/components/MobileMockups";
 import TermsAndConditions from "@/components/TermsAndConditions";
 import AboutUsSection from '../components/AboutUsSection';
+import FeaturesSection from "@/components/FeaturesSection";
 
 // Simple spacer component for visual separation
 const Spacer = ({ size = "large" }) => {
@@ -38,14 +39,18 @@ export default function Home() {
           <section className="pt-32 bg-white">
             <DescriptionSection />
           </section>
+
+            <section className="pt-24 bg-white" id="features">
+            <FeaturesSection />
+          </section>
           
           {/* About us section */}
-          <section className="pt-24 bg-white">
+          <section className="pt-24 bg-white" id="about-us">
             <AboutUsSection /> 
           </section>
           
           {/* Client form section */}
-          <section className="pt-24 bg-white">
+          <section className="pt-24 bg-white" id="contact">
             <ClientForm />
           </section>
           
@@ -60,12 +65,12 @@ export default function Home() {
           </section>
           
           {/* Terms section */}
-          <section className="pt-24 bg-white">
+          <section className="pt-24 bg-white" id="terms" >
             <TermsAndConditions />
           </section>
           
           {/* Download section - extra space before footer */}
-          <section className="pt-24 bg-white">
+          <section className="pt-24 bg-white" id="download">
             <DownloadSection />
           </section>
         </div>

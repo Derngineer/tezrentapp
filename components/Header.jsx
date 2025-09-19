@@ -20,7 +20,8 @@ export default function Header() {
       }
       
       // Determine active section by checking viewport position
-      const sections = ["features", "catalog", "contact"];
+      // Updated to include all sections
+      const sections = ["features", "catalog", "contact", "about-us", "download", "terms"];
       let current = "";
       
       for (const section of sections) {
@@ -52,11 +53,12 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [open]);
   
+  // Updated navigation links to match sections
   const navLinks = [
     { href: "#features", label: "Features" },
     { href: "#catalog", label: "Catalog" },
     { href: "#contact", label: "Contact" },
-    { href: "/about", label: "About" },
+    { href: "#about-us", label: "About" }, // Changed from "/about" to "#about-us"
   ];
 
   return (
@@ -102,7 +104,7 @@ export default function Header() {
           <div className="h-6 border-l border-gray-300 mx-2"></div>
           
           <Link 
-            href="/start" 
+            href="#download" // Changed from "/start" to "#download"
             className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-full font-medium transition-all transform hover:scale-105 shadow-md hover:shadow-lg active:scale-95"
           >
             Get Started
@@ -164,7 +166,7 @@ export default function Header() {
             <div className="h-px bg-gray-200 my-4"></div>
             
             <Link 
-              href="/start" 
+              href="#download" // Changed from "/start" to "#download"
               className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium transition-all text-center mt-4"
               onClick={() => setOpen(false)}
             >
