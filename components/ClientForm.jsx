@@ -2,8 +2,10 @@
 import React, { useState } from "react";
 import { FaCheck, FaSpinner, FaUser, FaEnvelope, FaPhone, FaBuilding, FaComment } from "react-icons/fa";
 import Image from "next/image";
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function ClientForm() {
+  // State for form fields and UI
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -12,8 +14,10 @@ export default function ClientForm() {
     message: ""
   });
   const [errors, setErrors] = useState({});
-  const [formStatus, setFormStatus] = useState("idle"); // idle, submitting, success, error
   const [focused, setFocused] = useState(null);
+  
+  // Formspree hook - replace "manpyykg" with your actual form ID
+  const [formspreeState, handleFormspreeSubmit] = useForm("manpyykg");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,28 +59,23 @@ export default function ClientForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    // First validate the form with our custom validation
     if (!validateForm()) return;
     
-    setFormStatus("submitting");
-    
-    try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Replace with actual form submission
-      // const response = await fetch("https://formbold.com/s/your-formbold-endpoint", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(formState)
-      // });
-      
-      // if (!response.ok) throw new Error("Form submission failed");
-      
-      setFormStatus("success");
-    } catch (error) {
-      console.error("Submission error:", error);
-      setFormStatus("error");
-    }
+    // Then submit to Formspree
+    handleFormspreeSubmit(e);
+  };
+
+  // Reset form after submission
+  const resetForm = () => {
+    setFormState({
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      message: ""
+    });
+    setErrors({});
   };
 
   return (
@@ -116,7 +115,7 @@ export default function ClientForm() {
               
               {/* The form */}
               <div className="flex-1 flex items-center justify-center p-8 lg:p-10">
-                {formStatus === "success" ? (
+                {formspreeState.succeeded ? (
                   <div className="w-full max-w-lg flex flex-col items-center justify-center py-8">
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
                       <FaCheck className="text-green-600 text-2xl" />
@@ -126,10 +125,7 @@ export default function ClientForm() {
                       Your submission has been received. We appreciate your feedback and will be in touch soon.
                     </p>
                     <button 
-                      onClick={() => {
-                        setFormState({name: "", email: "", phone: "", company: "", message: ""});
-                        setFormStatus("idle");
-                      }}
+                      onClick={() => resetForm()}
                       className="px-6 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition"
                     >
                       Submit Another Response
@@ -175,6 +171,7 @@ export default function ClientForm() {
                       {errors.name && (
                         <p className="text-red-500 text-xs mt-1">{errors.name}</p>
                       )}
+                      <ValidationError prefix="Name" field="name" errors={formspreeState.errors} />
                     </div>
                     
                     <div className="relative">
@@ -206,6 +203,7 @@ export default function ClientForm() {
                       {errors.email && (
                         <p className="text-red-500 text-xs mt-1">{errors.email}</p>
                       )}
+                      <ValidationError prefix="Email" field="email" errors={formspreeState.errors} />
                     </div>
                     
                     <div className="relative">
@@ -237,6 +235,7 @@ export default function ClientForm() {
                       {errors.phone && (
                         <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
                       )}
+                      <ValidationError prefix="Phone" field="phone" errors={formspreeState.errors} />
                     </div>
                     
                     <div className="relative">
@@ -294,26 +293,27 @@ export default function ClientForm() {
                       {errors.message && (
                         <p className="text-red-500 text-xs mt-1">{errors.message}</p>
                       )}
+                      <ValidationError prefix="Message" field="message" errors={formspreeState.errors} />
                     </div>
                     
                     <button
                       type="submit"
-                      disabled={formStatus === "submitting"}
+                      disabled={formspreeState.submitting}
                       className="w-full bg-blue-700 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition-all transform hover:translate-y-[-2px] hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                     >
-                      {formStatus === "submitting" ? (
+                      {formspreeState.submitting ? (
                         <>
                           <FaSpinner className="animate-spin" />
                           <span>Submitting...</span>
                         </>
-                      ) : formStatus === "error" ? (
+                      ) : formspreeState.errors ? (
                         "Try Again"
                       ) : (
                         "Submit Feedback"
                       )}
                     </button>
                     
-                    {formStatus === "error" && (
+                    {formspreeState.errors && (
                       <p className="text-red-500 text-sm text-center mt-2">
                         There was an error submitting your form. Please try again.
                       </p>
@@ -325,9 +325,10 @@ export default function ClientForm() {
           </div>
         </div>
         
-        {/* Right: Stacked Mobile Mockups - Updated Version */}
+        {/* Right side mobile mockups remain unchanged */}
         <div className="hidden md:flex flex-col justify-center items-center relative h-[680px] w-[460px]">
-          {/* Bottom image - only shows partially */}
+          {/* Mobile mockup code remains the same */}
+          {/* Bottom image */}
           <div className="absolute bottom-12 right-4 z-10">
             <Image
               src="/M4.png"
@@ -338,7 +339,7 @@ export default function ClientForm() {
             />
           </div>
           
-          {/* Middle image - offset slightly */}
+          {/* Middle image */}
           <div className="absolute bottom-20 left-4 z-20">
             <Image
               src="/M5.png"
@@ -349,10 +350,9 @@ export default function ClientForm() {
             />
           </div>
           
-          {/* Top image - transparent background */}
+          {/* Top image */}
           <div className="absolute top-0 left-[80px] z-30">
             <div className="w-[260px] h-[520px] rounded-[40px] overflow-hidden shadow-xl">
-              {/* Screen content */}
               <div className="absolute inset-0 rounded-[32px] overflow-hidden">
                 <Image
                   src="/M8.png" 
@@ -363,13 +363,10 @@ export default function ClientForm() {
                   className="rounded-[30px]"
                 />
               </div>
-              
-              {/* Home indicator */}
               <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full z-20"></div>
             </div>
           </div>
           
-          {/* Subtle shadow effect */}
           <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-[320px] h-[40px] bg-black/10 blur-xl rounded-[50%]"></div>
         </div>
       </div>
