@@ -27,50 +27,50 @@ export default function Home() {
     <div className="font-sans min-h-screen flex flex-col">
       <Header />
       
-      {/* Hero section - No padding top, connects directly to header */}
-      <section className="w-full pt-16">
+      {/* Hero section */}
+      <section className="w-full">
         <HeroSection />
       </section>
       
-      {/* Main content with sections and spacing */}
+      {/* Main content with sections */}
       <main className="flex-1 flex flex-col">
-        <div className="grid grid-cols-1 gap-80">
+        <div className="grid grid-cols-1">
           {/* Description section */}
-          <section className="pt-32 bg-white">
+          <section className="bg-white">
             <DescriptionSection />
           </section>
 
-            <section className="pt-24 bg-white" id="features">
+          <section className="bg-white" id="features">
             <FeaturesSection />
           </section>
           
           {/* About us section */}
-          <section className="pt-24 bg-white" id="about-us">
+          <section className="bg-white" id="about-us">
             <AboutUsSection /> 
           </section>
           
           {/* Client form section */}
-          <section className="pt-24 bg-white" id="contact">
+          <section className="bg-white" id="contact">
             <ClientForm />
           </section>
           
           {/* Reviews section */}
-          <section className="pt-24 bg-white">
+          <section className="bg-white">
             <ReviewsCarousel />
           </section>
           
           {/* Mobile mockups section */}
-          <section className="pt-24 bg-white">
+          <section className="bg-white">
             <MobileMockups />
           </section>
           
           {/* Terms section */}
-          <section className="pt-24 bg-white" id="terms" >
+          <section className="bg-white" id="terms">
             <TermsAndConditions />
           </section>
           
-          {/* Download section - extra space before footer */}
-          <section className="pt-24 bg-white" id="download">
+          {/* Download section */}
+          <section className="bg-white" id="download">
             <DownloadSection />
           </section>
         </div>
