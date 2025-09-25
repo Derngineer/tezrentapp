@@ -201,7 +201,7 @@ export default function Header() {
               <div>
                 <div className="text-xs text-gray-500">{t('navigation.support')}</div>
                 <a href="tel:+15555555555" className="text-blue-600 font-medium">
-                  (555) 555-5555
+                  (555) 555-50000
                 </a>
               </div>
             </div>
