@@ -1,0 +1,85 @@
+{
+  "app": {
+    "name": "Tezrent"
+  },
+  "navigation": {
+    "features": "Features",
+    "about": "About us",
+    "contact": "Contact",
+    "download": "Download",
+    "terms": "Terms",
+    "catalog": "Catalog",
+    "getStarted": "Get Started",
+    "support": "Support"
+  },
+  "hero": {
+    "badge": "Coming Soon",
+    "title": "Rent Heavy Machinery",
+    "titleHighlight": "Easily",
+    "subtitle": "Find, compare, and rent the best construction equipment for your next project. Fast, reliable, and affordable.",
+    "cta": "Get the App",
+    "downloadButton": "Download Now",
+    "learnMoreButton": "Learn More",
+    "appStore": "App Store",
+    "machineryOptions": "500+ Machinery Options",
+    "support": "24/7 Support",
+    "videoFallback": "Your browser does not support the video tag.",
+    "scroll": "Scroll"
+  },
+  "features": {
+    "title": "Why choose Tezrent",
+    "item1": {
+      "title": "Wide Selection",
+      "description": "Browse a large catalog of excavators, loaders, cranes and more."
+    },
+    "item2": {
+      "title": "Trusted Partners",
+      "description": "We work with vetted suppliers to ensure quality and safety."
+    },
+    "item3": {
+      "title": "Fast Booking",
+      "description": "Reserve equipment in minutes with transparent pricing."
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "content": "Tezrent connects contractors with reliable machinery suppliers to keep projects moving."
+  },
+  "form": {
+    "title": "Contact Us",
+    "subtitle": "Share your rental needs and we’ll get back to you.",
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "company": "Company (optional)",
+    "message": "Your message",
+    "submit": "Send",
+    "submitting": "Sending...",
+    "tryAgain": "Try again",
+    "thankYou": "Thank you!",
+    "thankYouMessage": "Your request has been received. We’ll contact you soon.",
+    "submitAnother": "Submit another response",
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "phoneRequired": "Phone is required",
+      "phoneInvalid": "Please enter a valid phone number",
+      "messageRequired": "Message is required",
+      "formError": "Something went wrong. Please try again."
+    }
+  },
+  "reviews": {
+    "title": "What our customers say"
+  },
+  "download": {
+    "title": "Download the app",
+    "cta": "Download"
+  },
+  "terms": {
+    "title": "Terms & Conditions"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

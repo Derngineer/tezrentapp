@@ -1,0 +1,74 @@
+{
+  "app": { "name": "Tezrent" },
+  "navigation": {
+    "features": "Xususiyatlar",
+    "about": "Biz haqimizda",
+    "contact": "Aloqa",
+    "download": "Yuklab olish",
+    "terms": "Shartlar",
+    "catalog": "Katalog",
+    "getStarted": "Boshlash",
+    "support": "Yordam"
+  },
+  "hero": {
+    "badge": "Tez orada",
+    "title": "Og'ir texnikani ijaraga oling",
+    "titleHighlight": "Oson",
+    "subtitle": "Keyingi loyihangiz uchun eng yaxshi qurilish texnikasini toping, taqqoslang va ijaraga oling. Tez, ishonchli va arzon.",
+    "cta": "Ilovani yuklab oling",
+    "downloadButton": "Hozir yuklab oling",
+    "learnMoreButton": "Batafsil",
+    "appStore": "App Store",
+    "machineryOptions": "500+ turdagi texnika",
+    "support": "24/7 qo‘llab-quvvatlash",
+    "videoFallback": "Brauzeringiz video tegini qo‘llab-quvvatlamaydi.",
+    "scroll": "Pastga aylantiring"
+  },
+  "features": {
+    "title": "Nega Tezrent",
+    "item1": {
+      "title": "Keng tanlov",
+      "description": "Ekskavatorlar, yuk ko‘taruvchilar, kranlar va boshqalar katalogini ko‘ring."
+    },
+    "item2": {
+      "title": "Ishonchli hamkorlar",
+      "description": "Sifat va xavfsizlik uchun tekshirilgan yetkazib beruvchilar bilan ishlaymiz."
+    },
+    "item3": {
+      "title": "Tez bron qilish",
+      "description": "Shaffof narxlar bilan bir necha daqiqada jihozga buyurtma bering."
+    }
+  },
+  "about": {
+    "title": "Biz haqimizda",
+    "content": "Tezrent pudratchilarni ishonchli texnika yetkazib beruvchilar bilan bog‘laydi va loyihalarning to‘xtamasligini ta’minlaydi."
+  },
+  "form": {
+    "title": "Biz bilan bog‘laning",
+    "subtitle": "Ijara ehtiyojlaringizni yozib qoldiring va tez orada siz bilan bog‘lanamiz.",
+    "name": "To‘liq ism",
+    "email": "Elektron pochta",
+    "phone": "Telefon raqami",
+    "company": "Kompaniya (ixtiyoriy)",
+    "message": "Xabaringiz",
+    "submit": "Yuborish",
+    "submitting": "Yuborilmoqda...",
+    "tryAgain": "Qayta urinib ko‘ring",
+    "thankYou": "Rahmat!",
+    "thankYouMessage": "So‘rovingiz qabul qilindi. Tez orada siz bilan bog‘lanamiz.",
+    "submitAnother": "Yana bir javob yuborish",
+    "errors": {
+      "nameRequired": "Ism majburiy",
+      "emailRequired": "Elektron pochta majburiy",
+      "emailInvalid": "Yaroqli elektron pochta manzilini kiriting",
+      "phoneRequired": "Telefon raqami majburiy",
+      "phoneInvalid": "Yaroqli telefon raqamini kiriting",
+      "messageRequired": "Xabar majburiy",
+      "formError": "Xatolik yuz berdi. Qayta urinib ko‘ring."
+    }
+  },
+  "reviews": { "title": "Mijozlarimiz fikri" },
+  "download": { "title": "Ilovani yuklab oling", "cta": "Yuklab olish" },
+  "terms": { "title": "Foydalanish shartlari" },
+  "footer": { "rights": "Barcha huquqlar himoyalangan." }
+}

@@ -3,12 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import { useTranslations, useLocale } from 'next-intl';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  
+  const t = useTranslations();
+  const locale = useLocale();
+
   // Handle scroll events
   useEffect(() => {
     const handleScroll = () => {
@@ -55,10 +59,12 @@ export default function Header() {
   
   // Updated navigation links to match sections
   const navLinks = [
-    { href: "#features", label: "Features" },
-    { href: "#catalog", label: "Catalog" },
-    { href: "#contact", label: "Contact" },
-    { href: "#about-us", label: "About" }, // Changed from "/about" to "#about-us"
+    { href: "#features", label: t('navigation.features') },
+    { href: "#catalog", label: t('navigation.catalog') },
+    { href: "#contact", label: t('navigation.contact') },
+    { href: "#about-us", label: t('navigation.about') },
+    { href: "#download", label: t('navigation.download') },
+    { href: "#terms", label: t('navigation.terms') },
   ];
 
   return (
@@ -68,23 +74,31 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 relative">
-        <Link href="/" className="font-bold text-2xl text-gray-800 flex items-center group">
-          <div className="flex items-baseline">
-            <span className="text-black group-hover:scale-105 transition-transform">Tez</span>
-            <span className="text-blue-600 group-hover:text-blue-500 transition-colors group-hover:scale-105 transition-transform">rent</span>
-            <span className="text-black">.</span>
-          </div>
-          <div className="h-6 w-6 ml-2 relative overflow-hidden hidden sm:block">
-            <div className={`absolute inset-0 transition-all duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
+        {/* Left: Logo + Language toggle */}
+        <div className="flex items-center">
+          <Link href={`/${locale}`} className="font-bold text-2xl text-gray-800 flex items-center group">
+            <div className="flex items-baseline">
+              <span className="text-black group-hover:scale-105 transition-transform">Tez</span>
+              <span className="text-blue-600 group-hover:text-blue-500 transition-colors group-hover:scale-105 transition-transform">rent</span>
+              <span className="text-black">.</span>
             </div>
-          </div>
-        </Link>
-        
+            <div className="h-6 w-6 ml-2 relative overflow-hidden hidden sm:block">
+              <div className={`absolute inset-0 transition-all duration-500 ${scrolled ? 'opacity-100' : 'opacity-0'}`} />
+            </div>
+          </Link>
+
+          {/* Bright blue language toggle */}
+          <LanguageSwitcher
+            className="ml-3 sm:ml-4"
+            selectClassName="border-blue-600 text-blue-600 font-semibold focus:ring-blue-400 focus:border-blue-600"
+          />
+        </div>
+
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link 
-              key={link.label}
+              key={link.href}
               href={link.href}
               className={`py-2 px-1 font-medium transition-all relative ${
                 activeSection === link.href.replace('#', '') 
@@ -100,14 +114,14 @@ export default function Header() {
               />
             </Link>
           ))}
-          
+
           <div className="h-6 border-l border-gray-300 mx-2"></div>
           
           <Link 
-            href="#download" // Changed from "/start" to "#download"
+            href="#download"
             className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-full font-medium transition-all transform hover:scale-105 shadow-md hover:shadow-lg active:scale-95"
           >
-            Get Started
+            {t('navigation.getStarted')}
           </Link>
         </nav>
         
@@ -150,7 +164,7 @@ export default function Header() {
           <div className="flex flex-col gap-5">
             {navLinks.map((link) => (
               <Link
-                key={link.label}
+                key={link.href}
                 href={link.href}
                 className={`py-2 px-1 font-medium transition-all relative ${
                   activeSection === link.href.replace('#', '') 
@@ -162,15 +176,18 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Language switcher in mobile */}
+            <LanguageSwitcher className="mt-2" />
             
             <div className="h-px bg-gray-200 my-4"></div>
             
             <Link 
-              href="#download" // Changed from "/start" to "#download"
+              href="#download"
               className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium transition-all text-center mt-4"
               onClick={() => setOpen(false)}
             >
-              Get Started
+              {t('navigation.getStarted')}
             </Link>
           </div>
           
@@ -182,7 +199,7 @@ export default function Header() {
                 </svg>
               </div>
               <div>
-                <div className="text-xs text-gray-500">Support</div>
+                <div className="text-xs text-gray-500">{t('navigation.support')}</div>
                 <a href="tel:+15555555555" className="text-blue-600 font-medium">
                   (555) 555-5555
                 </a>
