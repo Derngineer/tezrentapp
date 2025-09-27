@@ -23,8 +23,7 @@ const Spacer = ({ size = "large" }) => {
 };
 
 export default function Home() {
-  // No namespace since messages root has keys like "hero", "navigation", etc.
-  const t = useTranslations();
+  const t = useTranslations('hero');
 
   return (
     <div className="font-sans min-h-screen flex flex-col">
@@ -33,6 +32,7 @@ export default function Home() {
         <HeroSection />
       </section>
       <main className="flex-1 flex flex-col">
+        <h1>{t('title')}</h1>
         <div className="grid grid-cols-1">
           <section className="bg-white">
             <DescriptionSection />
