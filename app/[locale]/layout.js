@@ -1,19 +1,30 @@
 import {NextIntlClientProvider} from 'next-intl';
-import {getLocale, getMessages} from 'next-intl/server';
-import './globals.css';
 
-export default async function LocaleLayout({children}) {
-  const locale = await getLocale();
-  const messages = await getMessages(); // ensure per-locale messages are loaded
-  const isRTL = locale === 'ar';
+import en from '../../messages/en.json';
+import ru from '../../messages/ru.json';
+import uz from '../../messages/uz.json';
+import ar from '../../messages/ar.json';
+
+const MAP = {en, ru, uz, ar};
+const SUPPORTED = Object.keys(MAP);
+const RTL = new Set(['ar']);
+
+export default async function LocaleLayout(props) {
+  const {children, params} = props;
+
+  // Handle both sync and (Next 15) async params
+  const awaited = (params && typeof params.then === 'function') ? await params : params;
+  const raw = awaited?.locale;
+  const locale = SUPPORTED.includes(raw) ? raw : 'en';
+
+  const messages = MAP[locale];
+  const dir = RTL.has(locale) ? 'rtl' : 'ltr';
 
   return (
-    <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'}>
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <div dir={dir} data-locale={locale}>
+      <NextIntlClientProvider key={locale} locale={locale} messages={messages}>
+        {children}
+      </NextIntlClientProvider>
+    </div>
   );
 }

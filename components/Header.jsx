@@ -10,7 +10,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const t = useTranslations();
+  const tNav = useTranslations('navigation');
   const locale = useLocale();
 
   // Handle scroll events
@@ -59,16 +59,17 @@ export default function Header() {
   
   // Updated navigation links to match sections
   const navLinks = [
-    { href: "#features", label: t('navigation.features') },
-    { href: "#catalog", label: t('navigation.catalog') },
-    { href: "#contact", label: t('navigation.contact') },
-    { href: "#about-us", label: t('navigation.about') },
-    { href: "#download", label: t('navigation.download') },
-    { href: "#terms", label: t('navigation.terms') },
+    { href: "#features", label: tNav('features') },
+    { href: "#catalog", label: tNav('catalog') },
+    { href: "#contact", label: tNav('contact') },
+    { href: "#about-us", label: tNav('about') },
+    { href: "#download", label: tNav('download') },
+    { href: "#terms", label: tNav('terms') },
   ];
 
   return (
     <header 
+      key={locale}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled ? 'py-3 bg-white/95 shadow-lg backdrop-blur-sm' : 'py-6 bg-white shadow-md'
       }`}
@@ -121,7 +122,7 @@ export default function Header() {
             href="#download"
             className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-full font-medium transition-all transform hover:scale-105 shadow-md hover:shadow-lg active:scale-95"
           >
-            {t('navigation.getStarted')}
+            {tNav('getStarted')}
           </Link>
         </nav>
         
@@ -187,7 +188,7 @@ export default function Header() {
               className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium transition-all text-center mt-4"
               onClick={() => setOpen(false)}
             >
-              {t('navigation.getStarted')}
+              {tNav('getStarted')}
             </Link>
           </div>
           
@@ -199,7 +200,7 @@ export default function Header() {
                 </svg>
               </div>
               <div>
-                <div className="text-xs text-gray-500">{t('navigation.support')}</div>
+                <div className="text-xs text-gray-500">{tNav('support')}</div>
                 <a href="tel:+15555555555" className="text-blue-600 font-medium">
                   (555) 555-50000
                 </a>
