@@ -54,8 +54,9 @@ html {
     padding-bottom: 0;
   }
 }
+/* 
 
-/* Debugging - comment out when done */
 .section-block { outline: 1px dashed red; }
 .section-inner { outline: 1px solid blue; }
 .section-inner > * { outline: 1px dotted green; }
+*/
