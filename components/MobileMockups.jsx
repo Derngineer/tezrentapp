@@ -9,7 +9,7 @@ export default function MobileMockups() {
   ];
 
   return (
-    <div className="w-full py-16 px-4">
+    <div className="w-full py-12 px-4">
       {/* Section Header */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Experience Our Mobile App</h2>

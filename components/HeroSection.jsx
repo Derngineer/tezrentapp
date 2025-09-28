@@ -54,9 +54,18 @@ export default function HeroSection() {
     }
   };
 
+  // Add this scroll function
+  const scrollToNextSection = () => {
+    // Find the element after the hero section (likely #description)
+    const nextSection = document.getElementById('features');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
-      className="relative min-h-screen w-full flex items-center justify-center bg-center bg-cover"
+      className="relative min-h-screen w-full flex items-center justify-center bg-center bg-cover pt-28 sm:pt-32"
       style={{
         backgroundImage: "linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.75)), url('/bannerimage.png')",
       }}
@@ -163,9 +172,13 @@ export default function HeroSection() {
         </div>
       </div>
       
-      {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+      {/* Update the scroll indicator */}
+      <div 
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity"
+        onClick={scrollToNextSection}
+      >
         <span className="text-white/50 text-xs uppercase tracking-widest mb-2">Scroll</span>
+        <FaAngleDown className="text-white/50 text-2xl animate-bounce" />
       </div>
     </section>
   );

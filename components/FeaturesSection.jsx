@@ -112,10 +112,10 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <div id="features" className="w-full bg-white py-20">
+    <div id="features" className="w-full bg-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Features</span>
           <h2 className="text-4xl font-extrabold text-blue-900 mt-2 mb-4">Everything You Need For Your Project</h2>
           <p className="text-xl text-gray-600">
@@ -141,7 +141,7 @@ export default function FeaturesSection() {
         </div>
         
         {/* Feature Content */}
-        <div className="mb-20">
+        <div className="mb-10">
           {featureCategories.map((category) => (
             <div
               key={category.id}
@@ -238,7 +238,7 @@ export default function FeaturesSection() {
             </div>
             
             <div className="relative z-10">
-              <h3 className="text-3xl font-bold text-white mb-6">Ready to get started?</h3>
+              <h3 className="text-3xl font-bold text-white mb-4">Ready to get started?</h3>
               <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
                 Find the perfect equipment for your next project in minutes. No commitments, no hassles.
               </p>

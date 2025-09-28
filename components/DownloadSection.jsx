@@ -22,7 +22,7 @@ export default function DownloadSection() {
   };
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-blue-50 via-blue-50 to-indigo-50 overflow-hidden">
+    <section className="relative py-12 bg-gradient-to-br from-blue-50 via-blue-50 to-indigo-50 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-10 right-10 w-64 h-64 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>

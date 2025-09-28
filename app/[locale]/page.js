@@ -11,17 +11,6 @@ import MobileMockups from '../../components/MobileMockups';
 import TermsAndConditions from '../../components/TermsAndConditions';
 import DownloadSection from '../../components/DownloadSection';
 
-// Simple spacer component for visual separation
-const Spacer = ({ size = "large" }) => {
-  const sizeClasses = {
-    small: "h-16",
-    medium: "h-32",
-    large: "h-64",
-    xlarge: "h-96"
-  };
-  return <div className={`${sizeClasses[size]} w-full`}></div>;
-};
-
 export default function Home() {
   const t = useTranslations('hero');
 
@@ -32,31 +21,47 @@ export default function Home() {
         <HeroSection />
       </section>
       <main className="flex-1 flex flex-col">
-        <h1>{t('title')}</h1>
-        <div className="grid grid-cols-1">
-          <section className="bg-white">
-            <DescriptionSection />
+        <div className="flex flex-col">
+
+          <section id="features" className="bg-white section-block py-6 md:py-8">
+            <div className="section-inner">
+              <FeaturesSection />
+            </div>
           </section>
-          <section className="bg-white" id="features">
-            <FeaturesSection />
+          <section id="about-us" className="bg-white section-block py-6 md:py-8">
+            <div className="section-inner">
+              <AboutUsSection />
+            </div>
           </section>
-          <section className="bg-white" id="about-us">
-            <AboutUsSection />
+                    <section id="description" className="bg-white section-block py-6 md:py-8">
+            <div className="section-inner">
+              <DescriptionSection />
+            </div>
           </section>
-          <section className="bg-white" id="contact">
-            <ClientForm />
+          <section id="contact" className="bg-white section-block py-6 md:py-8">
+            <div className="section-inner">
+              <ClientForm />
+            </div>
           </section>
-          <section className="bg-white">
-            <ReviewsCarousel />
+          <section className="bg-white section-block py-6 md:py-8">
+            <div className="section-inner">
+              <ReviewsCarousel />
+            </div>
           </section>
-          <section className="bg-white">
-            <MobileMockups />
+          <section className="bg-white section-block py-6 md:py-8">
+            <div className="section-inner">
+              <MobileMockups />
+            </div>
           </section>
-          <section className="bg-white" id="terms">
-            <TermsAndConditions />
+          <section id="terms" className="bg-white section-block py-6 md:py-8">
+            <div className="section-inner">
+              <TermsAndConditions />
+            </div>
           </section>
-          <section className="bg-white" id="download">
-            <DownloadSection />
+          <section id="download" className="bg-white section-block py-6 md:py-8">
+            <div className="section-inner">
+              <DownloadSection />
+            </div>
           </section>
         </div>
       </main>

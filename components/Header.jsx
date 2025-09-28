@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { useTranslations, useLocale } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -12,6 +12,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const headerRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,6 +40,26 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    function applyHeight() {
+      if (headerRef.current) {
+        const h = headerRef.current.getBoundingClientRect().height;
+        document.documentElement.style.setProperty('--header-height', `${h}px`);
+      }
+    }
+    applyHeight();
+
+    // Recompute on resize & when fonts load
+    window.addEventListener('resize', applyHeight);
+    const ro = new ResizeObserver(applyHeight);
+    if (headerRef.current) ro.observe(headerRef.current);
+
+    return () => {
+      window.removeEventListener('resize', applyHeight);
+      ro.disconnect();
+    };
+  }, []);
+
   const navLinks = [
     { href: "#features", label: tNav("features") },
     { href: "#catalog", label: tNav("catalog") },
@@ -50,9 +71,10 @@ export default function Header() {
 
   return (
     <header
+      ref={headerRef}
       key={locale}
-      className={`fixed top-0 left-0 w-full z-50 ${
-        scrolled ? "py-3 bg-white/95 shadow" : "py-6 bg-white shadow"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "py-3 bg-white/95 shadow-lg backdrop-blur-sm" : "py-6 bg-white shadow-md"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 relative">

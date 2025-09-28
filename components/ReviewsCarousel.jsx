@@ -127,7 +127,7 @@ export default function ReviewsCarousel() {
   const next = () => setCurrent((current + 1) % slides.length);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-blue-50">
+    <section className="py-12 bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-7xl w-full mx-auto flex flex-col items-center px-4 sm:px-6">
         <div className="mb-16 text-center">
           <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Testimonials</span>

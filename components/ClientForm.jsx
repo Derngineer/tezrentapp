@@ -79,7 +79,7 @@ export default function ClientForm() {
   };
 
   return (
-    <section className="w-full flex justify-center items-center py-20 bg-gradient-to-b from-white to-blue-50">
+    <section className="w-full flex justify-center items-center py-12 bg-gradient-to-b from-white to-blue-50">
       <div className="flex flex-col md:flex-row w-full max-w-7xl px-4 gap-8 lg:gap-16">
         {/* Left: Card (form + encouragement) */}
         <div className="flex-1 flex flex-col justify-center items-center">

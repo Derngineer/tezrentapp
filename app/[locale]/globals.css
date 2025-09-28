@@ -31,4 +31,26 @@ html {
   overflow-x: hidden; /* Additional safeguard for horizontal scrolling */
   scroll-behavior: smooth; /* Optional: for smooth scrolling */
 }
+.section-block > *:first-child {
+  margin-top: 0;
+}
+.section-block > *:last-child {
+  margin-bottom: 0;
+}
 
+/* Collapse first/last element margins inside sections */
+.section-block > *:first-child { margin-top: 0; }
+.section-block > *:last-child { margin-bottom: 0; }
+
+/* Utility if you want consistent inner vertical padding */
+.section-inner {
+  padding-top: 3.5rem; /* 56px ~ py-14 */
+  padding-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-inner {
+    padding-top: 4.5rem; /* adjust as needed */
+    padding-bottom: 4.5rem;
+  }
+}

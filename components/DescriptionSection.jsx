@@ -38,7 +38,7 @@ export default function DescriptionSection() {
   ];
   
   return (
-    <section className="py-16 bg-white flex justify-center">
+    <section className="py-8 bg-white flex justify-center">
       <div className="max-w-7xl w-full px-4 flex flex-col md:flex-row items-center md:items-stretch gap-12">
         {/* Left: Explainer Animation/Video Placeholder */}
         <div className="w-full md:w-1/3 flex items-center justify-center mb-10 md:mb-0 sticky top-24">
