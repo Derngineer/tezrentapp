@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { 
   FaClock, 
   FaTruck, 
@@ -18,131 +19,155 @@ import {
 } from 'react-icons/fa';
 
 export default function FeaturesSection() {
+  const t = useTranslations('features');
   const [activeTab, setActiveTab] = useState('rental');
   
-  // Equipment categories showcase - moved to top
+  // Equipment categories showcase using translations but with arrays for items
   const equipmentShowcase = [
     // Small Equipment first
     {
-      name: 'Small Equipment',
+      name: t('inventory.categories.small.name'),
       image: '/equipment/small-equipment.jpg',
-      items: ['Cameras', 'Blenders', 'Coolers', 'Portable AC']
+      items: [
+        t('inventory.categories.small.items.0'),
+        t('inventory.categories.small.items.1'),
+        t('inventory.categories.small.items.2'),
+        t('inventory.categories.small.items.3')
+      ]
     },
     // Then Home & DIY
     {
-      name: 'Home & DIY',
+      name: t('inventory.categories.diy.name'),
       image: '/equipment/home-diy.jpg',
-      items: ['Power Drills', 'Sanders', 'Paint Sprayers', 'Ladders']
+      items: [
+        t('inventory.categories.diy.items.0'),
+        t('inventory.categories.diy.items.1'),
+        t('inventory.categories.diy.items.2'),
+        t('inventory.categories.diy.items.3')
+      ]
     },
     // Then Industrial
     {
-      name: 'Industrial',
+      name: t('inventory.categories.industrial.name'),
       image: '/equipment/industrial.jpg',
-      items: ['Generators', 'Welders', 'Forklifts', 'Air Compressors']
+      items: [
+        t('inventory.categories.industrial.items.0'),
+        t('inventory.categories.industrial.items.1'),
+        t('inventory.categories.industrial.items.2'),
+        t('inventory.categories.industrial.items.3')
+      ]
     },
-    // Then Landscaping 
+    // Then Landscaping
     {
-      name: 'Landscaping',
+      name: t('inventory.categories.landscaping.name'),
       image: '/equipment/landscaping.jpg',
-      items: ['Lawn Mowers', 'Trimmers', 'Wood Chippers', 'Trenchers']
+      items: [
+        t('inventory.categories.landscaping.items.0'),
+        t('inventory.categories.landscaping.items.1'),
+        t('inventory.categories.landscaping.items.2'),
+        t('inventory.categories.landscaping.items.3')
+      ]
     },
     // Construction last
     {
-      name: 'Construction',
+      name: t('inventory.categories.construction.name'),
       image: '/equipment/construction.jpg',
-      items: ['Excavators', 'Bulldozers', 'Concrete Mixers', 'Jackhammers']
+      items: [
+        t('inventory.categories.construction.items.0'),
+        t('inventory.categories.construction.items.1'),
+        t('inventory.categories.construction.items.2'),
+        t('inventory.categories.construction.items.3')
+      ]
     }
   ];
 
-  // Feature categories with their details
+  // Feature categories with translations
   const featureCategories = [
     {
       id: 'rental',
-      title: 'Equipment Rental',
-      description: 'Access a vast catalog of well-maintained equipment for any project',
+      title: t('categories.rental.title'),
+      description: t('categories.rental.description'),
       features: [
         {
           icon: <FaTools className="text-blue-600 text-3xl" />,
-          title: 'Extensive Inventory',
-          description: 'From hand tools to heavy machinery, find exactly what you need for any job size.'
+          title: t('categories.rental.features.inventory.title'),
+          description: t('categories.rental.features.inventory.description')
         },
         {
           icon: <FaSearch className="text-blue-600 text-3xl" />,
-          title: 'Advanced Search',
-          description: 'Filter by project type, tool category, brand, or specifications to quickly find the perfect equipment.'
+          title: t('categories.rental.features.search.title'),
+          description: t('categories.rental.features.search.description')
         },
         {
           icon: <FaShieldAlt className="text-blue-600 text-3xl" />,
-          title: 'Quality Guaranteed',
-          description: 'All equipment is regularly serviced, inspected, and tested before each rental.'
+          title: t('categories.rental.features.quality.title'),
+          description: t('categories.rental.features.quality.description')
         }
       ]
     },
-    // Other feature categories remain unchanged
     {
       id: 'logistics',
-      title: 'Delivery & Logistics',
-      description: 'Reliable, on-time delivery and pickup services for your convenience',
+      title: t('categories.logistics.title'),
+      description: t('categories.logistics.description'),
       features: [
         {
           icon: <FaTruck className="text-blue-600 text-3xl" />,
-          title: 'Same-Day Delivery',
-          description: 'Get equipment delivered within hours for urgent project needs in service areas.'
+          title: t('categories.logistics.features.sameDay.title'),
+          description: t('categories.logistics.features.sameDay.description')
         },
         {
           icon: <FaCalendarAlt className="text-blue-600 text-3xl" />,
-          title: 'Flexible Scheduling',
-          description: 'Schedule deliveries and pickups at your convenience with precise time windows.'
+          title: t('categories.logistics.features.scheduling.title'),
+          description: t('categories.logistics.features.scheduling.description')
         },
         {
           icon: <FaMobileAlt className="text-blue-600 text-3xl" />,
-          title: 'Real-Time Tracking',
-          description: 'Track your equipment delivery in real-time and receive ETA notifications.'
+          title: t('categories.logistics.features.tracking.title'),
+          description: t('categories.logistics.features.tracking.description')
         }
       ]
     },
     {
       id: 'payment',
-      title: 'Simplified Payments',
-      description: 'Transparent pricing and flexible payment options for businesses and individuals',
+      title: t('categories.payment.title'),
+      description: t('categories.payment.description'),
       features: [
         {
           icon: <FaCreditCard className="text-blue-600 text-3xl" />,
-          title: 'Multiple Payment Options',
-          description: 'Pay with credit cards, ACH transfers, digital wallets, or approved corporate accounts.'
+          title: t('categories.payment.features.options.title'),
+          description: t('categories.payment.features.options.description')
         },
         {
           icon: <FaClock className="text-blue-600 text-3xl" />,
-          title: 'Hourly to Monthly Rates',
-          description: 'Flexible rental periods with decreasing rates for longer rentals to match your project timeline.'
+          title: t('categories.payment.features.rates.title'),
+          description: t('categories.payment.features.rates.description')
         },
         {
           icon: <FaChartLine className="text-blue-600 text-3xl" />,
-          title: 'Business Insights',
-          description: 'Track spending by project, department, or location with detailed reporting for business customers.'
+          title: t('categories.payment.features.insights.title'),
+          description: t('categories.payment.features.insights.description')
         }
       ]
     },
-    // New category for small equipment rental features
     {
       id: 'small',
-      title: 'Small Equipment',
-      description: 'Quality small equipment for events, travel, and home needs',
+      title: t('categories.small.title'),
+      description: t('categories.small.description'),
       features: [
         {
           icon: <FaCamera className="text-blue-600 text-3xl" />,
-          title: 'Photography & Video',
-          description: 'Professional cameras, lenses, and accessories for any photography or video project.'
+          title: t('categories.small.features.photography.title'),
+          description: t('categories.small.features.photography.description')
         },
         {
           icon: <FaBlender className="text-blue-600 text-3xl" />,
-          title: 'Kitchen & Event',
-          description: 'Blenders, food processors, and other kitchen equipment for events and gatherings.'
+          title: t('categories.small.features.kitchen.title'),
+          description: t('categories.small.features.kitchen.description')
         },
         {
           icon: <FaWind className="text-blue-600 text-3xl" />,
-          title: 'Climate Control',
-          description: 'Portable AC units, heaters, and air purifiers for comfort in any environment.'
+          title: t('categories.small.features.climate.title'),
+          description: t('categories.small.features.climate.description')
         }
       ]
     }
@@ -151,13 +176,17 @@ export default function FeaturesSection() {
   return (
     <div id="features" className="w-full bg-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Equipment Category Showcase - MOVED TO TOP */}
+        {/* Equipment Category Showcase */}
         <div className="mb-16">
           <div className="text-center mb-10">
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Our Inventory</span>
-            <h2 className="text-4xl font-extrabold text-blue-900 mt-2 mb-4">Equipment Categories</h2>
+            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">
+              {t('inventory.badge')}
+            </span>
+            <h2 className="text-4xl font-extrabold text-blue-900 mt-2 mb-4">
+              {t('inventory.title')}
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Browse our extensive catalog of quality equipment across major categories
+              {t('inventory.subtitle')}
             </p>
           </div>
           
@@ -168,29 +197,40 @@ export default function FeaturesSection() {
                 className="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="aspect-w-16 aspect-h-9 relative">
-                  {/* Remove Image component, keep only the blue background */}
                   <div className="w-full h-48 relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-700 z-10"></div>
                   </div>
                 </div>
                 
-                <div className="absolute inset-0 z-20 p-4 flex flex-col justify-end">
-                  <h4 className="text-xl font-bold text-white mb-2">{category.name}</h4>
-                  <ul className="space-y-1">
+                <div className="absolute inset-0 z-20 p-3 flex flex-col justify-end">
+                  {/* Adjust heading size dynamically based on text length */}
+                  <h4 className={`font-bold text-white mb-2 ${
+                    category.name.length > 15 ? 'text-lg' : 'text-xl'
+                  }`}>
+                    {category.name}
+                  </h4>
+                  
+                  {/* Adjust item spacing and font size */}
+                  <ul className="space-y-0.5">
                     {category.items.map((item, i) => (
-                      <li key={i} className="text-white/90 text-sm flex items-center">
-                        <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
-                        {item}
+                      <li key={i} className="text-white/90 text-xs sm:text-sm flex items-start">
+                        <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 mt-1.5"></span>
+                        <span className="flex-1 line-clamp-2">{item}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-3 pt-3 border-t border-white/20">
+                  
+                  {/* Adjust link section */}
+                  <div className="mt-2 pt-2 border-t border-white/20">
                     <a 
                       href="#catalog" 
-                      className="text-white flex items-center text-sm font-medium hover:text-blue-300 transition-colors"
+                      className="text-white flex items-center text-xs sm:text-sm font-medium hover:text-blue-300 transition-colors"
                     >
-                      Explore {category.name}
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      {/* Make the explore text smaller */}
+                      <span className="truncate">
+                        {t('inventory.explore')}
+                      </span>
+                      <svg className="w-3 h-3 ml-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </a>
@@ -205,35 +245,39 @@ export default function FeaturesSection() {
         <div className="mb-16 bg-blue-50 rounded-2xl p-8">
           <div className="flex flex-col lg:flex-row gap-8 items-center">
             <div className="lg:w-1/2">
-              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">New Additions</span>
-              <h3 className="text-3xl font-bold text-blue-900 mt-2 mb-4">Small Equipment Rentals</h3>
+              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">
+                {t('smallEquipment.badge')}
+              </span>
+              <h3 className="text-3xl font-bold text-blue-900 mt-2 mb-4">
+                {t('smallEquipment.title')}
+              </h3>
               <p className="text-lg text-gray-700 mb-6">
-                We've expanded our inventory to include high-quality small equipment perfect for events, travel, home projects, and more.
+                {t('smallEquipment.subtitle')}
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <div className="bg-white p-4 rounded-lg shadow-md">
                   <div className="flex items-center">
                     <FaCamera className="text-blue-600 text-xl mr-3" />
-                    <span className="font-medium">Professional Cameras</span>
+                    <span className="font-medium">{t('smallEquipment.items.cameras')}</span>
                   </div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-md">
                   <div className="flex items-center">
                     <FaBlender className="text-blue-600 text-xl mr-3" />
-                    <span className="font-medium">Kitchen Equipment</span>
+                    <span className="font-medium">{t('smallEquipment.items.kitchen')}</span>
                   </div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-md">
                   <div className="flex items-center">
                     <FaSnowflake className="text-blue-600 text-xl mr-3" />
-                    <span className="font-medium">Portable Coolers</span>
+                    <span className="font-medium">{t('smallEquipment.items.coolers')}</span>
                   </div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-md">
                   <div className="flex items-center">
                     <FaWind className="text-blue-600 text-xl mr-3" />
-                    <span className="font-medium">Climate Control</span>
+                    <span className="font-medium">{t('smallEquipment.items.climate')}</span>
                   </div>
                 </div>
               </div>
@@ -242,7 +286,7 @@ export default function FeaturesSection() {
                 href="#catalog" 
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium inline-flex items-center transition-colors"
               >
-                Browse Small Equipment
+                {t('smallEquipment.cta')}
                 <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -250,13 +294,13 @@ export default function FeaturesSection() {
             </div>
             
             <div className="lg:w-1/2 grid grid-cols-2 gap-4">
-              {/* DSLR Camera - Fixed */}
+              {/* DSLR Camera */}
               <div className="bg-white p-3 rounded-lg shadow-lg transform rotate-1">
                 <div className="aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
                   <div className="relative w-full h-32 sm:h-40">
                     <Image 
                       src="/dlsr1.jpg" 
-                      alt="DSLR Camera"
+                      alt={t('smallEquipment.productLabels.cameras')}
                       width={300}
                       height={300}
                       priority
@@ -264,16 +308,18 @@ export default function FeaturesSection() {
                     />
                   </div>
                 </div>
-                <div className="mt-2 text-center text-sm font-medium">DSLR Cameras</div>
+                <div className="mt-2 text-center text-sm font-medium">
+                  {t('smallEquipment.productLabels.cameras')}
+                </div>
               </div>
               
-              {/* Blender - Working */}
+              {/* Blender */}
               <div className="bg-white p-3 rounded-lg shadow-lg transform -rotate-1">
                 <div className="aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
                   <div className="relative w-full h-32 sm:h-40">
                     <Image 
                       src="/blendwe1.jpg" 
-                      alt="Professional Blender"
+                      alt={t('smallEquipment.productLabels.blenders')}
                       width={300}
                       height={300}
                       priority
@@ -281,16 +327,18 @@ export default function FeaturesSection() {
                     />
                   </div>
                 </div>
-                <div className="mt-2 text-center text-sm font-medium">Pro Blenders</div>
+                <div className="mt-2 text-center text-sm font-medium">
+                  {t('smallEquipment.productLabels.blenders')}
+                </div>
               </div>
               
-              {/* Cooler - Fixed */}
+              {/* Cooler */}
               <div className="bg-white p-3 rounded-lg shadow-lg transform -rotate-1">
                 <div className="aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
                   <div className="relative w-full h-32 sm:h-40">
                     <Image 
                       src="/chiller1.jpg" 
-                      alt="Portable Cooler"
+                      alt={t('smallEquipment.productLabels.coolers')}
                       width={300}
                       height={300}
                       priority
@@ -302,16 +350,18 @@ export default function FeaturesSection() {
                     />
                   </div>
                 </div>
-                <div className="mt-2 text-center text-sm font-medium">Coolers</div>
+                <div className="mt-2 text-center text-sm font-medium">
+                  {t('smallEquipment.productLabels.coolers')}
+                </div>
               </div>
               
-              {/* AC - Working */}
+              {/* AC */}
               <div className="bg-white p-3 rounded-lg shadow-lg transform rotate-1">
                 <div className="aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
                   <div className="relative w-full h-32 sm:h-40">
                     <Image 
                       src="/fan1.jpg" 
-                      alt="Portable AC"
+                      alt={t('smallEquipment.productLabels.ac')}
                       width={300}
                       height={300}
                       priority
@@ -319,18 +369,24 @@ export default function FeaturesSection() {
                     />
                   </div>
                 </div>
-                <div className="mt-2 text-center text-sm font-medium">Portable AC</div>
+                <div className="mt-2 text-center text-sm font-medium">
+                  {t('smallEquipment.productLabels.ac')}
+                </div>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Section Header - MOVED AFTER EQUIPMENT CATEGORIES */}
+        {/* Rest of your component... */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Features</span>
-          <h2 className="text-4xl font-extrabold text-blue-900 mt-2 mb-4">Everything You Need For Your Project</h2>
+          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">
+            {t('sectionHeader.badge')}
+          </span>
+          <h2 className="text-4xl font-extrabold text-blue-900 mt-2 mb-4">
+            {t('sectionHeader.title')}
+          </h2>
           <p className="text-xl text-gray-600">
-            Our rental platform is designed to make equipment rental seamless, convenient, and reliable at every step.
+            {t('sectionHeader.subtitle')}
           </p>
         </div>
         
@@ -398,22 +454,22 @@ export default function FeaturesSection() {
             </div>
             
             <div className="relative z-10">
-              <h3 className="text-3xl font-bold text-white mb-4">Ready to get started?</h3>
+              <h3 className="text-3xl font-bold text-white mb-4">{t('cta.title')}</h3>
               <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Find the perfect equipment for your next project in minutes. No commitments, no hassles.
+                {t('cta.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
                   href="#catalog" 
                   className="bg-white text-blue-700 hover:bg-blue-50 px-8 py-3 rounded-full font-semibold text-lg shadow-lg transition-all"
                 >
-                  Browse Equipment
+                  {t('cta.browseButton')}
                 </a>
                 <a 
                   href="#download" 
                   className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-full font-semibold text-lg transition-all"
                 >
-                  Download App
+                  {t('cta.downloadButton')}
                 </a>
               </div>
             </div>

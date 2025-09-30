@@ -1,8 +1,12 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { FaAngleDown, FaPlay } from "react-icons/fa";
+import { useTranslations } from 'next-intl';
 
 export default function HeroSection() {
+  // Initialize translations
+  const t = useTranslations('hero');
+  
   const [isVisible, setIsVisible] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -54,9 +58,7 @@ export default function HeroSection() {
     }
   };
 
-  // Add this scroll function
   const scrollToNextSection = () => {
-    // Find the element after the hero section (likely #description)
     const nextSection = document.getElementById('features');
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
@@ -82,18 +84,20 @@ export default function HeroSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          {/* New badge */}
+          {/* Badge with translation */}
           <span className="bg-blue-600 text-white text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-4 inline-flex items-center font-semibold">
             <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
-            Coming Soon
+            {t('badge')}
           </span>
           
+          {/* Title with translation */}
           <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-6 text-left drop-shadow-lg leading-tight">
-            Rent Heavy Machinery <span className="text-blue-300">Easily<sup className="text-sm">™</sup></span>
+            {t('title')} <span className="text-blue-300">{t('titleHighlight')}<sup className="text-sm">™</sup></span>
           </h1>
           
+          {/* Subtitle with translation */}
           <p className="text-lg sm:text-2xl text-white mb-8 text-left max-w-2xl drop-shadow opacity-90">
-            Find, compare, and rent the best construction equipment for your next project. Fast, reliable, and affordable.
+            {t('subtitle')}
           </p>
           
           {/* Trust indicators */}
@@ -109,30 +113,31 @@ export default function HeroSection() {
                       </svg>
                     ))}
                   </div>
-                  <span className="text-white text-xs">App Store</span>
+                  <span className="text-white text-xs">{t('appStore')}</span>
                 </div>
               </div>
             </div>
             <div className="text-white/80 flex items-center gap-2 text-sm">
               <span className="w-1 h-1 bg-white/60 rounded-full"></span>
-              <span>500+ Machinery Options</span>
+              <span>{t('machineryOptions')}</span>
               <span className="w-1 h-1 bg-white/60 rounded-full"></span>
-              <span>24/7 Support</span>
+              <span>{t('support')}</span>
             </div>
           </div>
           
+          {/* Buttons with translations */}
           <div className="flex flex-col sm:flex-row gap-4 justify-start w-full sm:w-auto">
             <a
               href="#catalog"
               className="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-blue-700 hover:text-white transition-all duration-300 border border-white flex-grow sm:flex-grow-0 text-center"
             >
-              Download Now
+              {t('downloadButton')}
             </a>
             <a
               href="#contact"
               className="border border-white text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 flex-grow sm:flex-grow-0 text-center"
             >
-              Learn More
+              {t('learnMoreButton')}
             </a>
           </div>
         </div>
@@ -144,7 +149,7 @@ export default function HeroSection() {
           }`}
           style={{transitionDelay: "200ms"}}
         >
-          {/* Video container - shadows removed */}
+          {/* Video container */}
           <div className="relative">
             {/* Video element */}
             <div className="relative z-10">
@@ -158,7 +163,7 @@ export default function HeroSection() {
               >
                 <source src="/videos/video2.webm" type="video/webm" />
                 <source src="/videos/video2.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
+                {t('videoFallback')}
               </video>
               
               {/* Loading indicator */}
@@ -172,12 +177,12 @@ export default function HeroSection() {
         </div>
       </div>
       
-      {/* Update the scroll indicator */}
+      {/* Scroll indicator with translation */}
       <div 
         className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity"
         onClick={scrollToNextSection}
       >
-        <span className="text-white/50 text-xs uppercase tracking-widest mb-2">Scroll</span>
+        <span className="text-white/50 text-xs uppercase tracking-widest mb-2">{t('scroll')}</span>
         <FaAngleDown className="text-white/50 text-2xl animate-bounce" />
       </div>
     </section>

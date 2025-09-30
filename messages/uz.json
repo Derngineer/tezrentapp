@@ -3,72 +3,203 @@
   "navigation": {
     "features": "Xususiyatlar",
     "about": "Biz haqimizda",
-    "contact": "Aloqa",
+    "contact": "Bog'lanish",
     "download": "Yuklab olish",
     "terms": "Shartlar",
     "catalog": "Katalog",
     "getStarted": "Boshlash",
-    "support": "Yordam"
+    "support": "Qo'llab-quvvatlash"
   },
   "hero": {
     "badge": "Tez orada",
-    "title": "Og'ir texnikani ijaraga oling",
-    "titleHighlight": "Oson",
-    "subtitle": "Keyingi loyihangiz uchun eng yaxshi qurilish texnikasini toping, taqqoslang va ijaraga oling. Tez, ishonchli va arzon.",
+    "title": "Og'ir texnikani ijaraga olish",
+    "titleHighlight": "osonlik bilan",
+    "subtitle": "Keyingi loyihangiz uchun eng yaxshi qurilish uskunalarini toping, solishtiring va ijaraga oling. Tez, ishonchli va hamyonbop.",
     "cta": "Ilovani yuklab oling",
     "downloadButton": "Hozir yuklab oling",
-    "learnMoreButton": "Batafsil",
+    "learnMoreButton": "Ko'proq ma'lumot",
     "appStore": "App Store",
-    "machineryOptions": "500+ turdagi texnika",
-    "support": "24/7 qo‘llab-quvvatlash",
-    "videoFallback": "Brauzeringiz video tegini qo‘llab-quvvatlamaydi.",
-    "scroll": "Pastga aylantiring"
+    "machineryOptions": "500 dan ortiq texnika turlari",
+    "support": "24/7 qo'llab-quvvatlash",
+    "videoFallback": "Brauzeringiz video tegni qo'llab-quvvatlamaydi.",
+    "scroll": "Pastga"
   },
   "features": {
-    "title": "Nega Tezrent",
+    "title": "Nega Tezrentni tanlash kerak",
     "item1": {
-      "title": "Keng tanlov",
-      "description": "Ekskavatorlar, yuk ko‘taruvchilar, kranlar va boshqalar katalogini ko‘ring."
+      "title": "Keng imkoniyatlar",
+      "description": "Ekskavatorlar, yuk ko'targichlar, kranlar va boshqalar bo'yicha katta katalogni ko'rib chiqing."
     },
     "item2": {
       "title": "Ishonchli hamkorlar",
-      "description": "Sifat va xavfsizlik uchun tekshirilgan yetkazib beruvchilar bilan ishlaymiz."
+      "description": "Sifat va xavfsizlikni ta'minlash uchun ishonchli yetkazib beruvchilar bilan hamkorlik qilamiz."
     },
     "item3": {
-      "title": "Tez bron qilish",
-      "description": "Shaffof narxlar bilan bir necha daqiqada jihozga buyurtma bering."
+      "title": "Tezkor bron qilish",
+      "description": "Uskunalarni bir necha daqiqada va shaffof narxlarda bron qiling."
+    },
+    "inventory": {
+      "badge": "Bizning inventarimiz",
+      "title": "Uskunalar toifalari",
+      "subtitle": "Asosiy toifalar bo'yicha sifatli uskunalarimizning keng katalogini ko'rib chiqing",
+      "explore": "Ko'rib chiqish",
+      "categories": {
+        "small": {
+          "name": "Kichik uskunalar",
+          "items": ["Kameralar", "Blenderlar", "Sovutgichlar", "Ko'chma konditsionerlar"]
+        },
+        "diy": {
+          "name": "Uy va DIY",
+          "items": ["Elektr drellar", "Shlif mashinalari", "Bo'yoq purkagichlar", "Narvonlar"]
+        },
+        "industrial": {
+          "name": "Sanoat uskunalari",
+          "items": ["Generatorlar", "Payvandlash uskunalari", "Yuk ko'targichlar", "Havo kompressorlari"]
+        },
+        "landscaping": {
+          "name": "Landshaft dizayni",
+          "items": ["O't o'rish mashinalari", "Trimmerlar", "Yog'och maydalagichlar", "Kavlagichlar"]
+        },
+        "construction": {
+          "name": "Qurilish",
+          "items": ["Ekskavatorlar", "Buldozerlar", "Beton aralashtirgichlar", "Perforatorlar"]
+        }
+      }
+    },
+    "smallEquipment": {
+      "badge": "Yangi qo'shimchalar",
+      "title": "Kichik uskunalarni ijaraga berish",
+      "subtitle": "Biz tadbirlar, sayohatlar, uy loyihalari va boshqa ko'p narsalar uchun ideal bo'lgan yuqori sifatli kichik uskunalar inventarimizni kengaytirdik.",
+      "items": {
+        "cameras": "Professional kameralar",
+        "kitchen": "Oshxona uskunalari",
+        "coolers": "Ko'chma sovutgichlar",
+        "climate": "Iqlim boshqaruvi"
+      },
+      "cta": "Kichik uskunalarni ko'rish",
+      "productLabels": {
+        "cameras": "DSLR kameralar",
+        "blenders": "Professional blenderlar",
+        "coolers": "Sovutgichlar",
+        "ac": "Ko'chma konditsionerlar"
+      }
+    },
+    "sectionHeader": {
+      "badge": "Xususiyatlar",
+      "title": "Loyihangiz uchun barcha kerakli narsalar",
+      "subtitle": "Bizning ijara platformamiz uskunalarni ijaraga olishni har bir bosqichda silliq, qulay va ishonchli qilish uchun mo'ljallangan."
+    },
+    "categories": {
+      "rental": {
+        "title": "Uskunalar ijarasi",
+        "description": "Har qanday loyiha uchun yaxshi saqlangan uskunalarning keng katalogiga kirish",
+        "features": {
+          "inventory": {
+            "title": "Keng inventar",
+            "description": "Qo'l asboblaridan og'ir texnikagacha, har qanday ish hajmi uchun aynan kerakli narsani toping."
+          },
+          "search": {
+            "title": "Kengaytirilgan qidiruv",
+            "description": "Mukammal uskunani tezda topish uchun loyiha turi, asbob toifasi, brend yoki xususiyatlar bo'yicha filtrlang."
+          },
+          "quality": {
+            "title": "Sifat kafolatlangan",
+            "description": "Barcha uskunalar har bir ijaradan oldin muntazam texnik xizmat ko'rsatiladi, tekshiriladi va sinovdan o'tkaziladi."
+          }
+        }
+      },
+      "logistics": {
+        "title": "Yetkazib berish va logistika",
+        "description": "Sizning qulayligingiz uchun ishonchli, o'z vaqtida yetkazib berish va olib ketish xizmatlari",
+        "features": {
+          "sameDay": {
+            "title": "Shu kunning o'zida yetkazib berish",
+            "description": "Xizmat ko'rsatish hududlarida shoshilinch loyiha ehtiyojlari uchun bir necha soat ichida uskunalarni yetkazib oling."
+          },
+          "scheduling": {
+            "title": "Moslashuvchan jadval",
+            "description": "Aniq vaqt oralig'i bilan o'zingizga qulay yetkazib berish va olib ketishni rejalashtiring."
+          },
+          "tracking": {
+            "title": "Real vaqtda kuzatish",
+            "description": "Uskunangizni yetkazib berishni real vaqtda kuzating va taxminiy vaqt haqida bildirishnomalar oling."
+          }
+        }
+      },
+      "payment": {
+        "title": "Soddalashtirilgan to'lovlar",
+        "description": "Bizneslar va shaxslar uchun shaffof narxlar va moslashuvchan to'lov variantlari",
+        "features": {
+          "options": {
+            "title": "Ko'p to'lov usullari",
+            "description": "Kredit kartalari, bank o'tkazmalari, raqamli hamyonlar yoki tasdiqlangan korporativ hisob raqamlari orqali to'lang."
+          },
+          "rates": {
+            "title": "Soatlik-oylik tariflari",
+            "description": "Loyiha jadvalingizga mos kelishi uchun uzoqroq ijara davrlari uchun kamayib boruvchi tariflar bilan moslashuvchan ijara davrlari."
+          },
+          "insights": {
+            "title": "Biznes tahlillari",
+            "description": "Biznes mijozlari uchun batafsil hisobotlar bilan loyiha, bo'lim yoki joylashuv bo'yicha xarajatlarni kuzating."
+          }
+        }
+      },
+      "small": {
+        "title": "Kichik uskunalar",
+        "description": "Tadbirlar, sayohatlar va uy ehtiyojlari uchun sifatli kichik uskunalar",
+        "features": {
+          "photography": {
+            "title": "Fotografiya va video",
+            "description": "Har qanday fotografiya yoki video loyihasi uchun professional kameralar, linzalar va aksessuarlar."
+          },
+          "kitchen": {
+            "title": "Oshxona va tadbirlar",
+            "description": "Blenderlar, oziq-ovqat protsessorlari va tadbirlar va yig'ilishlar uchun boshqa oshxona uskunalari."
+          },
+          "climate": {
+            "title": "Iqlim boshqaruvi",
+            "description": "Har qanday muhitda qulaylik uchun ko'chma konditsioner bloklari, isitgichlar va havo tozalagichlar."
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Boshlashga tayyormisiz?",
+      "subtitle": "Keyingi loyihangiz uchun mukammal uskunani bir necha daqiqada toping. Majburiyatlarsiz, muammolarsiz.",
+      "browseButton": "Uskunalarni ko'rish",
+      "downloadButton": "Ilovani yuklab olish"
     }
   },
   "about": {
     "title": "Biz haqimizda",
-    "content": "Tezrent pudratchilarni ishonchli texnika yetkazib beruvchilar bilan bog‘laydi va loyihalarning to‘xtamasligini ta’minlaydi."
+    "content": "Tezrent loyihalarning uzluksizligini ta'minlash uchun pudratchilarni ishonchli uskuna yetkazib beruvchilari bilan bog'laydi."
   },
   "form": {
-    "title": "Biz bilan bog‘laning",
-    "subtitle": "Ijara ehtiyojlaringizni yozib qoldiring va tez orada siz bilan bog‘lanamiz.",
-    "name": "To‘liq ism",
-    "email": "Elektron pochta",
-    "phone": "Telefon raqami",
+    "title": "Bog'lanish",
+    "subtitle": "Ijara ehtiyojlaringizni bizga ayting va biz tez orada siz bilan bog'lanamiz.",
+    "name": "To'liq ism",
+    "email": "Email",
+    "phone": "Telefon raqam",
     "company": "Kompaniya (ixtiyoriy)",
     "message": "Xabaringiz",
     "submit": "Yuborish",
     "submitting": "Yuborilmoqda...",
-    "tryAgain": "Qayta urinib ko‘ring",
+    "tryAgain": "Qayta urinib ko'ring",
     "thankYou": "Rahmat!",
-    "thankYouMessage": "So‘rovingiz qabul qilindi. Tez orada siz bilan bog‘lanamiz.",
-    "submitAnother": "Yana bir javob yuborish",
+    "thankYouMessage": "So'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz.",
+    "submitAnother": "Boshqa javob yuborish",
     "errors": {
-      "nameRequired": "Ism majburiy",
-      "emailRequired": "Elektron pochta majburiy",
-      "emailInvalid": "Yaroqli elektron pochta manzilini kiriting",
-      "phoneRequired": "Telefon raqami majburiy",
-      "phoneInvalid": "Yaroqli telefon raqamini kiriting",
-      "messageRequired": "Xabar majburiy",
-      "formError": "Xatolik yuz berdi. Qayta urinib ko‘ring."
+      "nameRequired": "Ism talab qilinadi",
+      "emailRequired": "Email talab qilinadi",
+      "emailInvalid": "Iltimos, haqiqiy email kiriting",
+      "phoneRequired": "Telefon raqami talab qilinadi",
+      "phoneInvalid": "Iltimos, haqiqiy telefon raqamini kiriting",
+      "messageRequired": "Xabar talab qilinadi",
+      "formError": "Xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring."
     }
   },
-  "reviews": { "title": "Mijozlarimiz fikri" },
+  "reviews": { "title": "Mijozlarimiz sharhlari" },
   "download": { "title": "Ilovani yuklab oling", "cta": "Yuklab olish" },
-  "terms": { "title": "Foydalanish shartlari" },
+  "terms": { "title": "Shartlar va qoidalar" },
   "footer": { "rights": "Barcha huquqlar himoyalangan." }
 }
