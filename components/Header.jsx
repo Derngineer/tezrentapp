@@ -14,9 +14,12 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("");
   const headerRef = useRef(null);
 
+  // Split into TWO separate effects - one for scrolling detection, one for menu management
   useEffect(() => {
+    // This effect handles scrolling position and active section detection
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      
       const sections = [
         "features",
         "catalog",
@@ -35,10 +38,24 @@ export default function Header() {
       }
       setActiveSection(current);
     };
+    
     window.addEventListener("scroll", handleScroll);
     handleScroll();
+    
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, []); // No dependency on open state
+
+  // SEPARATE effect for closing menu on scroll
+  useEffect(() => {
+    if (!open) return; // Only add listener when menu is open
+    
+    const closeMenuOnScroll = () => {
+      setOpen(false);
+    };
+    
+    window.addEventListener("scroll", closeMenuOnScroll);
+    return () => window.removeEventListener("scroll", closeMenuOnScroll);
+  }, [open]);
 
   useEffect(() => {
     function applyHeight() {
@@ -74,7 +91,9 @@ export default function Header() {
       ref={headerRef}
       key={locale}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "py-3 bg-white/95 shadow-lg backdrop-blur-sm" : "py-6 bg-white shadow-md"
+        scrolled 
+          ? "py-3 md:bg-white/95 bg-white shadow-lg md:backdrop-blur-sm" 
+          : "py-6 bg-white shadow-md"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 relative">
@@ -171,6 +190,7 @@ export default function Header() {
           className={`md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
             open ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
+          onClick={() => setOpen(false)} // Add this onClick handler
         />
 
         <nav
