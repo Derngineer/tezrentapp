@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import { FaCheck, FaSpinner, FaUser, FaEnvelope, FaPhone, FaBuilding, FaComment } from "react-icons/fa";
 import Image from "next/image";
 import { useForm, ValidationError } from '@formspree/react';
+import { useTranslations } from 'next-intl';
 
 export default function ClientForm() {
+  const t = useTranslations('clientForm');
+  
   // State for form fields and UI
   const [formState, setFormState] = useState({
     name: "",
@@ -33,23 +36,23 @@ export default function ClientForm() {
     const newErrors = {};
     
     if (!formState.name.trim()) {
-      newErrors.name = "Name is required";
+      newErrors.name = t('validation.nameRequired');
     }
     
     if (!formState.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = t('validation.emailRequired');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) {
-      newErrors.email = "Please enter a valid email";
+      newErrors.email = t('validation.emailInvalid');
     }
     
     if (!formState.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+      newErrors.phone = t('validation.phoneRequired');
     } else if (!/^[0-9+\s()-]{7,}$/.test(formState.phone)) {
-      newErrors.phone = "Please enter a valid phone number";
+      newErrors.phone = t('validation.phoneInvalid');
     }
     
     if (!formState.message.trim()) {
-      newErrors.message = "Message is required";
+      newErrors.message = t('validation.messageRequired');
     }
     
     setErrors(newErrors);
@@ -78,6 +81,13 @@ export default function ClientForm() {
     setErrors({});
   };
 
+  const feedbackCategories = [
+    t('feedbackCategories.equipmentSuggestions'),
+    t('feedbackCategories.featureRequests'),
+    t('feedbackCategories.uxImprovements'),
+    t('feedbackCategories.earlyAccess')
+  ];
+
   return (
     <section className="w-full flex justify-center items-center py-12 bg-gradient-to-b from-white to-blue-50">
       <div className="flex flex-col md:flex-row w-full max-w-7xl px-4 gap-8 lg:gap-16">
@@ -91,17 +101,17 @@ export default function ClientForm() {
                   <FaComment className="text-white text-2xl" />
                 </div>
                 <h2 className="text-2xl font-bold text-blue-900 mb-4 text-center">
-                  Shape the Future of Tezrent!
+                  {t('encouragement.heading')}
                 </h2>
                 <p className="text-gray-700 text-base text-center mb-4">
-                  We're building Tezrent with your needs in mind. Share what features, equipment, or improvements you'd love to see in our app!
+                  {t('encouragement.description')}
                 </p>
                 <div className="bg-white/70 backdrop-blur-sm p-4 rounded-lg shadow-sm border border-blue-100/50 w-full">
                   <p className="text-blue-800 font-medium text-center text-sm mb-3">
-                    Your feedback drives our roadmap:
+                    {t('encouragement.feedbackLabel')}
                   </p>
                   <ul className="space-y-2">
-                    {["Equipment suggestions", "Feature requests", "UX improvements", "Early access program"].map((item, i) => (
+                    {feedbackCategories.map((item, i) => (
                       <li key={i} className="flex items-center text-sm text-gray-700">
                         <span className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center mr-2 flex-shrink-0">
                           <FaCheck className="text-blue-600 text-xs" />
@@ -120,15 +130,15 @@ export default function ClientForm() {
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
                       <FaCheck className="text-green-600 text-2xl" />
                     </div>
-                    <h3 className="text-2xl font-bold text-blue-900 mb-3 text-center">Thank You!</h3>
+                    <h3 className="text-2xl font-bold text-blue-900 mb-3 text-center">{t('success.heading')}</h3>
                     <p className="text-gray-700 text-center mb-6">
-                      Your submission has been received. We appreciate your feedback and will be in touch soon.
+                      {t('success.message')}
                     </p>
                     <button 
                       onClick={() => resetForm()}
                       className="px-6 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition"
                     >
-                      Submit Another Response
+                      {t('success.submitAnother')}
                     </button>
                   </div>
                 ) : (
@@ -137,9 +147,9 @@ export default function ClientForm() {
                     className="w-full max-w-lg flex flex-col gap-5"
                     autoComplete="on"
                   >
-                    <h2 className="text-xl font-bold text-blue-900 text-center mb-1">Get In Touch</h2>
+                    <h2 className="text-xl font-bold text-blue-900 text-center mb-1">{t('form.heading')}</h2>
                     <p className="text-gray-600 text-center mb-3 text-sm">
-                      Fill in your details and tell us about your rental needs.
+                      {t('form.description')}
                     </p>
                     
                     <div className="relative">
@@ -151,7 +161,7 @@ export default function ClientForm() {
                             : 'transform translate-y-2 text-gray-500'
                         }`}
                       >
-                        Full Name
+                        {t('form.fields.name')}
                       </label>
                       <div className="absolute left-3 top-3.5 text-blue-700">
                         <FaUser />
@@ -171,7 +181,7 @@ export default function ClientForm() {
                       {errors.name && (
                         <p className="text-red-500 text-xs mt-1">{errors.name}</p>
                       )}
-                      <ValidationError prefix="Name" field="name" errors={formspreeState.errors} />
+                      <ValidationError prefix={t('form.fields.name')} field="name" errors={formspreeState.errors} />
                     </div>
                     
                     <div className="relative">
@@ -183,7 +193,7 @@ export default function ClientForm() {
                             : 'transform translate-y-2 text-gray-500'
                         }`}
                       >
-                        Email Address
+                        {t('form.fields.email')}
                       </label>
                       <div className="absolute left-3 top-3.5 text-blue-700">
                         <FaEnvelope />
@@ -203,7 +213,7 @@ export default function ClientForm() {
                       {errors.email && (
                         <p className="text-red-500 text-xs mt-1">{errors.email}</p>
                       )}
-                      <ValidationError prefix="Email" field="email" errors={formspreeState.errors} />
+                      <ValidationError prefix={t('form.fields.email')} field="email" errors={formspreeState.errors} />
                     </div>
                     
                     <div className="relative">
@@ -215,7 +225,7 @@ export default function ClientForm() {
                             : 'transform translate-y-2 text-gray-500'
                         }`}
                       >
-                        Phone Number
+                        {t('form.fields.phone')}
                       </label>
                       <div className="absolute left-3 top-3.5 text-blue-700">
                         <FaPhone />
@@ -235,7 +245,7 @@ export default function ClientForm() {
                       {errors.phone && (
                         <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
                       )}
-                      <ValidationError prefix="Phone" field="phone" errors={formspreeState.errors} />
+                      <ValidationError prefix={t('form.fields.phone')} field="phone" errors={formspreeState.errors} />
                     </div>
                     
                     <div className="relative">
@@ -247,7 +257,7 @@ export default function ClientForm() {
                             : 'transform translate-y-2 text-gray-500'
                         }`}
                       >
-                        Company (optional)
+                        {t('form.fields.company')}
                       </label>
                       <div className="absolute left-3 top-3.5 text-blue-700">
                         <FaBuilding />
@@ -273,7 +283,7 @@ export default function ClientForm() {
                             : 'transform translate-y-2 text-gray-500'
                         }`}
                       >
-                        Your Message
+                        {t('form.fields.message')}
                       </label>
                       <div className="absolute left-3 top-3.5 text-blue-700">
                         <FaComment />
@@ -293,7 +303,7 @@ export default function ClientForm() {
                       {errors.message && (
                         <p className="text-red-500 text-xs mt-1">{errors.message}</p>
                       )}
-                      <ValidationError prefix="Message" field="message" errors={formspreeState.errors} />
+                      <ValidationError prefix={t('form.fields.message')} field="message" errors={formspreeState.errors} />
                     </div>
                     
                     <button
@@ -304,18 +314,18 @@ export default function ClientForm() {
                       {formspreeState.submitting ? (
                         <>
                           <FaSpinner className="animate-spin" />
-                          <span>Submitting...</span>
+                          <span>{t('form.buttons.submitting')}</span>
                         </>
                       ) : formspreeState.errors ? (
-                        "Try Again"
+                        t('form.buttons.tryAgain')
                       ) : (
-                        "Submit Feedback"
+                        t('form.buttons.submit')
                       )}
                     </button>
                     
                     {formspreeState.errors && (
                       <p className="text-red-500 text-sm text-center mt-2">
-                        There was an error submitting your form. Please try again.
+                        {t('form.errors.submission')}
                       </p>
                     )}
                   </form>
@@ -332,7 +342,7 @@ export default function ClientForm() {
           <div className="absolute bottom-12 right-4 z-10">
             <Image
               src="/M4.png"
-              alt="Tezrent mobile app mockup 1"
+              alt={t('mobileImages.alt1')}
               width={240}
               height={480}
               className="rounded-3xl shadow-lg"
@@ -343,7 +353,7 @@ export default function ClientForm() {
           <div className="absolute bottom-20 left-4 z-20">
             <Image
               src="/M5.png"
-              alt="Tezrent mobile app mockup 2"
+              alt={t('mobileImages.alt2')}
               width={240}
               height={480}
               className="rounded-3xl shadow-lg"
@@ -356,7 +366,7 @@ export default function ClientForm() {
               <div className="absolute inset-0 rounded-[32px] overflow-hidden">
                 <Image
                   src="/M8.png" 
-                  alt="Tezrent mobile app mockup 3"
+                  alt={t('mobileImages.alt3')}
                   width={260}
                   height={520}
                   style={{ objectFit: "contain" }}

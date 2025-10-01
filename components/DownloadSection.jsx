@@ -3,8 +3,10 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaBell, FaCheckCircle, FaEnvelope, FaArrowRight } from "react-icons/fa";
+import { useTranslations } from 'next-intl';
 
 export default function DownloadSection() {
+  const t = useTranslations('downloadSection');
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -20,6 +22,12 @@ export default function DownloadSection() {
       setLoading(false);
     }, 1000);
   };
+
+  const benefits = [
+    { title: t('benefits.0.title'), desc: t('benefits.0.desc'), icon: "📱" },
+    { title: t('benefits.1.title'), desc: t('benefits.1.desc'), icon: "🔍" },
+    { title: t('benefits.2.title'), desc: t('benefits.2.desc'), icon: "🔒" }
+  ];
 
   return (
     <section className="relative py-12 bg-gradient-to-br from-blue-50 via-blue-50 to-indigo-50 overflow-hidden">
@@ -39,24 +47,20 @@ export default function DownloadSection() {
         
         <div className="flex flex-col items-center w-full">
           <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-4 bg-blue-100 px-4 py-1 rounded-full animate-pulse">
-            Coming Soon
+            {t('comingSoon')}
           </span>
           
           <h2 className="text-5xl sm:text-6xl font-extrabold text-blue-900 mb-6 text-center max-w-4xl leading-tight">
-            Rent Machinery <span className="text-blue-600">On The Go</span>
+            {t('heading.part1')} <span className="text-blue-600">{t('heading.part2')}</span>
           </h2>
           
           <p className="text-xl sm:text-2xl text-blue-800/80 mb-10 text-center font-medium max-w-3xl">
-            Download on your favorite platform and manage rentals from anywhere, anytime.
+            {t('subheading')}
           </p>
 
           {/* App benefits */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14 w-full max-w-5xl">
-            {[
-              { title: "Instant Booking", desc: "Find and reserve equipment in minutes", icon: "📱" },
-              { title: "Real-time Tracking", desc: "Know where your machinery is at all times", icon: "🔍" },
-              { title: "Secure Payments", desc: "Fast, encrypted transactions", icon: "🔒" }
-            ].map((benefit, i) => (
+            {benefits.map((benefit, i) => (
               <div 
                 key={i} 
                 className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md hover:shadow-lg transition-all flex flex-col items-center text-center"
@@ -75,13 +79,13 @@ export default function DownloadSection() {
               <button
                 className="relative bg-black rounded-3xl shadow-xl hover:scale-105 transition duration-300 w-64 sm:w-72 h-24 flex items-center justify-center"
                 disabled
-                aria-label="App Store link coming soon"
+                aria-label={t('appStore.ariaLabel')}
                 style={{ opacity: 0.9, cursor: "not-allowed" }}
               >
                 <div className="relative w-56 h-16">
                   <Image
                     src="/appstore.png"
-                    alt="Download on the App Store"
+                    alt={t('appStore.alt')}
                     fill
                     className="object-contain"
                     priority
@@ -96,13 +100,13 @@ export default function DownloadSection() {
               <button
                 className="relative bg-black rounded-3xl shadow-xl hover:scale-105 transition duration-300 w-64 sm:w-72 h-24 flex items-center justify-center"
                 disabled
-                aria-label="Google Play link coming soon"
+                aria-label={t('googlePlay.ariaLabel')}
                 style={{ opacity: 0.9, cursor: "not-allowed" }}
               >
                 <div className="relative w-56 h-16">
                   <Image
                     src="/googleplay.png"
-                    alt="Get it on Google Play"
+                    alt={t('googlePlay.alt')}
                     fill
                     className="object-contain"
                     priority
@@ -119,7 +123,7 @@ export default function DownloadSection() {
                 <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
                   <FaBell />
                 </div>
-                <h3 className="font-bold text-xl text-blue-900">Get Notified</h3>
+                <h3 className="font-bold text-xl text-blue-900">{t('notification.title')}</h3>
               </div>
               
               {subscribed ? (
@@ -128,13 +132,13 @@ export default function DownloadSection() {
                     <FaCheckCircle className="text-3xl" />
                   </div>
                   <p className="text-center text-green-700">
-                    Thank you! You'll be the first to know when the app launches.
+                    {t('notification.success')}
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col">
                   <p className="text-gray-600 mb-4">
-                    Be the first to know when our app launches. We'll send you a notification about exclusive early access and special offers.
+                    {t('notification.description')}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-2">
                     <div className="relative flex-grow">
@@ -145,7 +149,7 @@ export default function DownloadSection() {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Your email address"
+                        placeholder={t('notification.emailPlaceholder')}
                         className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
                       />
@@ -161,7 +165,7 @@ export default function DownloadSection() {
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                       ) : (
                         <>
-                          Notify Me <FaArrowRight className="ml-2" />
+                          {t('notification.button')} <FaArrowRight className="ml-2" />
                         </>
                       )}
                     </button>
@@ -180,13 +184,13 @@ export default function DownloadSection() {
                     </div>
                     <div className="ml-3 text-sm">
                       <label htmlFor="terms" className="text-gray-500">
-                        I agree to the{" "}
+                        {t('terms.agree')}{" "}
                         <Link href="#terms" className="text-blue-600 hover:text-blue-800 underline">
-                          Terms and Conditions
+                          {t('terms.termsLink')}
                         </Link>
-                        {" "}and{" "}
+                        {" "}{t('terms.and')}{" "}
                         <Link href="#privacy" className="text-blue-600 hover:text-blue-800 underline">
-                          Privacy Policy
+                          {t('terms.privacyLink')}
                         </Link>
                       </label>
                     </div>
@@ -203,7 +207,7 @@ export default function DownloadSection() {
             <div className="col-span-1 md:col-span-2">
               <h3 className="font-bold text-xl text-blue-900 mb-4">Tezrent</h3>
               <p className="text-gray-600 mb-4">
-                Making heavy machinery rental easy, affordable, and accessible for everyone.
+                {t('footer.description')}
               </p>
               <div className="flex space-x-4">
                 {["facebook", "twitter", "instagram", "linkedin"].map((social) => (
@@ -222,12 +226,12 @@ export default function DownloadSection() {
             </div>
             
             <div>
-              <h4 className="font-semibold text-blue-900 mb-4">Company</h4>
+              <h4 className="font-semibold text-blue-900 mb-4">{t('footer.company.title')}</h4>
               <ul className="space-y-2">
-                {["About", "Careers", "Blog", "Press"].map((item) => (
+                {["about", "careers", "blog", "press"].map((item, index) => (
                   <li key={item}>
                     <Link href="#" className="text-gray-600 hover:text-blue-600 transition">
-                      {item}
+                      {t(`footer.company.links.${index}`)}
                     </Link>
                   </li>
                 ))}
@@ -235,34 +239,21 @@ export default function DownloadSection() {
             </div>
             
             <div>
-              <h4 className="font-semibold text-blue-900 mb-4">Legal</h4>
+              <h4 className="font-semibold text-blue-900 mb-4">{t('footer.legal.title')}</h4>
               <ul className="space-y-2">
-                <li>
-                  <Link href="#terms" className="text-gray-600 hover:text-blue-600 transition">
-                    Terms
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#privacy" className="text-gray-600 hover:text-blue-600 transition">
-                    Privacy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#cookies" className="text-gray-600 hover:text-blue-600 transition">
-                    Cookies
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#licenses" className="text-gray-600 hover:text-blue-600 transition">
-                    Licenses
-                  </Link>
-                </li>
+                {["terms", "privacy", "cookies", "licenses"].map((item, index) => (
+                  <li key={item}>
+                    <Link href={`#${item}`} className="text-gray-600 hover:text-blue-600 transition">
+                      {t(`footer.legal.links.${index}`)}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
           
           <div className="border-t border-blue-100 mt-12 pt-6 text-center text-gray-600 text-sm">
-            &copy; {new Date().getFullYear()} Machinery Rental with Tezrent<sup>™</sup>. All rights reserved.
+            &copy; {new Date().getFullYear()} {t('footer.copyright')}
           </div>
         </footer>
       </div>

@@ -170,9 +170,112 @@
       "downloadButton": "Ilovani yuklab olish"
     }
   },
+  "description": {
+    "heading": "Bu qanday ishlaydi",
+    "intro": "Tezrent bilan texnikani ijaraga olish oddiy, shaffof va samarali. Bizning ilovamiz uskunalarni ijaraga olish tajribasini boshidan oxirigacha qulay qilish uchun yaratilgan.",
+    "steps": {
+      "step1": {
+        "title": "Ko'rish va qidirish",
+        "description": "Keng doiradagi texnikalarni o'rganing va aynan o'zingizga kerak bo'lgan narsani topish uchun ularni turi, hajmi yoki mavjudligi bo'yicha filtrlang."
+      },
+      "step2": {
+        "title": "Oson bron qilish",
+        "description": "Uskunangizni tanlang, ijara sanalarini belgilang va xavfsiz platformamiz orqali tezda bron qiling."
+      },
+      "step3": {
+        "title": "Qulay yetkazib berish yoki olib ketish",
+        "description": "Obyektingizga yetkazib berishni tashkil qiling yoki qulay vaqtda texnikani o'zingiz olib keting."
+      },
+      "step4": {
+        "title": "Boshqarish va qaytarish",
+        "description": "Ijaralaringizni kuzating, kerak bo'lganda muddatlarni uzaytiring va uskunani osonlik bilan qaytaring — hammasi ilova ichida."
+      }
+    }
+  },
   "about": {
-    "title": "Biz haqimizda",
-    "content": "Tezrent loyihalarning uzluksizligini ta'minlash uchun pudratchilarni ishonchli uskuna yetkazib beruvchilari bilan bog'laydi."
+    "sectionHeader": {
+      "badge": "Tezrent haqida",
+      "title": "Ishonchli uskunalar hamkoringiz",
+      "subtitle": "Biz keng inventarimiz, ishonchli xizmatimiz va qulay tajribamiz bilan uskunalar ijarasini yangilamoqdamiz."
+    },
+    "tabs": {
+      "mission": "Bizning vazifamiz",
+      "story": "Bizning tarixmiz",
+      "approach": "Bizning yondashuvimiz"
+    },
+    "mission": {
+      "paragraph1": "Tezrentda bizning vazifamiz sifatli uskunalarni hamma uchun, DIY uy egalari dan tortib katta qurilish kompaniyalarigacha, mavjud qilishdir. Biz to'g'ri asboblar ishni to'g'ri bajarish uchun to'siq bo'lmasligi kerak deb ishonimiz.",
+      "paragraph2": "Biz shaffof narxlar, ishonchli texnik xizmat ko'rsatish va ajoyib mijozlarni qo'llab-quvvatlash bilan uskunalar ijarasini soddalashtiradigan platforma yaratdik - bu sizga o'z loyihangizga e'tibor qaratish imkonini beradi, asboblaringizga emas."
+    },
+    "story": {
+      "paragraph1": "2018 yilda pudratchilar va texnologiya innovatorlari jamoasi tomonidan tashkil etilgan Tezrent an'anaviy uskunalar ijarasi jarayonlaridan norozoliklardan kelib chiqqan. Biz yanada samaraliroq, foydalanuvchi uchun qulay ijara tajribasini yaratish uchun texnologiyadan foydalanish imkoniyatini ko'rdik.",
+      "paragraph2": "Kichik omborxonada atigi 50 ta element bilan boshlab, biz turli toifalarda 1,200 dan ortiq uskunalarga o'sib, butun mamlakat bo'ylab minglab mamnun mijozlarga xizmat ko'rsatmoqdamiz."
+    },
+    "approach": {
+      "paragraph1": "Bizning yondashuvimiz uchta asosiy tamoyilga asoslanadi: sifat, ishonchlilik va qulaylik. Har bir uskuna har bir ijaradan oldin qattiq texnik xizmat ko'rsatish va sinovdan o'tadi.",
+      "paragraph2": "Biz o'z vaqtida yetkazib berish va olib ketishni ta'minlash uchun optimallashtirilgan logistikani ishlab chiqdik va mijozlarni qo'llab-quvvatlash jamoamiz sizning o'ziga xos ehtiyojlaringiz uchun to'g'ri uskunani tanlash va foydalanish bo'yicha ekspert maslahatini berishga doimo tayyor."
+    },
+    "features": {
+      "quality": {
+        "title": "Sifatli uskunalar",
+        "description": "Ishonchli brendlardan muntazam texnik xizmat ko'rsatiladigan va sinovdan o'tkazilgan asboblar."
+      },
+      "delivery": {
+        "title": "Tez yetkazib berish",
+        "description": "Sizning joylashuvingizga shu kunning o'zida yoki keyingi kun yetkazib berish imkoniyatlari."
+      },
+      "support": {
+        "title": "24/7 qo'llab-quvvatlash",
+        "description": "Sizga kerak bo'lganda ekspert maslahat va texnik yordam."
+      },
+      "terms": {
+        "title": "Moslashuvchan shartlar",
+        "description": "Jadvalingizga mos kelish uchun soat, kun, hafta yoki oy bo'yicha ijaraga olish."
+      }
+    },
+    "equipmentRange": {
+      "title": "Bizning uskunalar diapazoni",
+      "subtitle": "Kichik qo'l asboblaridan og'ir texnikagacha, bizda sizga kerak bo'lgan hamma narsa bor",
+      "categories": {
+        "homeDiy": {
+          "name": "Uy va DIY",
+          "count": "240",
+          "examples": "Dreller, toshqollarni, narvonlar"
+        },
+        "construction": {
+          "name": "Qurilish",
+          "count": "320",
+          "examples": "Perforatorlar, beton aralashtirgichlar"
+        },
+        "landscaping": {
+          "name": "Landshaft dizayni",
+          "count": "180",
+          "examples": "O't o'rish mashinalari, trimmerlar"
+        },
+        "industrial": {
+          "name": "Sanoat",
+          "count": "275",
+          "examples": "Generatorlar, kompressorlar"
+        },
+        "automotive": {
+          "name": "Avtomobil",
+          "count": "150",
+          "examples": "Diagnostika asboblari, ko'targichlar"
+        },
+        "eventAv": {
+          "name": "Tadbirlar va AV",
+          "count": "125",
+          "examples": "Kameralar, ovoz tizimlari"
+        }
+      },
+      "browseCategory": "Kategoriyani ko'rish"
+    },
+    "stats": {
+      "equipmentItems": "Uskuna elementlari",
+      "satisfaction": "Mamnuniyat",
+      "servingSince": "2018 yildan buyon xizmat ko'rsatmoqda",
+      "trustedBy": "10,000+ mijozlar ishonadi"
+    }
   },
   "form": {
     "title": "Bog'lanish",
@@ -198,8 +301,193 @@
       "formError": "Xatolik yuz berdi. Iltimos, qaytadan urinib ko'ring."
     }
   },
-  "reviews": { "title": "Mijozlarimiz sharhlari" },
+  "reviews": {
+    "title": "Mijozlarimiz nima deydi",
+    "badge": "Sharhlar",
+    "prevReview": "Oldingi sharh",
+    "nextReview": "Keyingi sharh",
+    "goToSlide": "{number}-chi sharhga o'tish",
+    "autoplayOn": "Avto o'ynash yoqilgan",
+    "autoplayOff": "Avto o'ynash o'chirilgan",
+    "items": {
+      "0": {
+        "name": "Madina Rahimova",
+        "role": "Qurilish menejeri",
+        "text": "Ajoyib xizmat! Texnika eng yuqori darajada va jarayon silliq edi."
+      },
+      "1": {
+        "name": "Jahongir Usmanov",
+        "role": "Loyiha direktori",
+        "text": "Tez yetkazib berish va juda professional xodimlar. Har qanday loyiha uchun tavsiya qilaman."
+      },
+      "2": {
+        "name": "Aziza Karimova",
+        "role": "Obyekt muhandisi",
+        "text": "Qulay narxlar va ishonchli uskunalar. Yana ijaraga olaman!"
+      },
+      "3": {
+        "name": "Bekzod Aliyev",
+        "role": "Pudratchi",
+        "text": "Mijozlarni qo'llab-quvvatlash juda foydali va javobgar edi."
+      },
+      "4": {
+        "name": "Nilufar Hakimova",
+        "role": "Operatsiyalar menejeri",
+        "text": "Mening eng yaxshi ijara tajribam. Hamma narsa va'da qilinganidek edi."
+      },
+      "5": {
+        "name": "Rustam Sobirov",
+        "role": "Mustaqil quruvchi",
+        "text": "Oson bron qilish va texnikaning ajoyib tanlovi."
+      }
+    }
+  },
   "download": { "title": "Ilovani yuklab oling", "cta": "Yuklab olish" },
   "terms": { "title": "Shartlar va qoidalar" },
-  "footer": { "rights": "Barcha huquqlar himoyalangan." }
+  "footer": { "rights": "Barcha huquqlar himoyalangan." },
+  "clientForm": {
+    "encouragement": {
+      "heading": "Tezrent kelajagini shakllantiring!",
+      "description": "Biz Tezrent'ni sizning ehtiyojlaringizni hisobga olgan holda yaratmoqdamiz. Bizning ilovamizda qanday funksiyalar, uskunalar yoki yaxshilanishlarni ko'rishni istashingizni biz bilan baham ko'ring!",
+      "feedbackLabel": "Fikr-mulohazalaringiz yo'l xaritamizni belgilaydi:"
+    },
+    "feedbackCategories": {
+      "equipmentSuggestions": "Uskuna takliflari",
+      "featureRequests": "Funksiya so'rovlari",
+      "uxImprovements": "Foydalanuvchi tajribasi yaxshilanishlari",
+      "earlyAccess": "Erta kirish dasturi"
+    },
+    "success": {
+      "heading": "Rahmat!",
+      "message": "Sizning murojatingiz qabul qilindi. Fikr-mulohazalaringizni qadrlaymiz va tez orada siz bilan bog'lanamiz.",
+      "submitAnother": "Boshqa javob yuborish"
+    },
+    "form": {
+      "heading": "Bog'lanish",
+      "description": "Ma'lumotlaringizni to'ldiring va ijara ehtiyojlaringiz haqida bizga aytib bering.",
+      "fields": {
+        "name": "To'liq ism",
+        "email": "Elektron pochta",
+        "phone": "Telefon raqam",
+        "company": "Kompaniya (ixtiyoriy)",
+        "message": "Xabaringiz"
+      },
+      "buttons": {
+        "submitting": "Yuborilmoqda...",
+        "tryAgain": "Qayta urinib ko'ring",
+        "submit": "Fikr bildirish"
+      },
+      "errors": {
+        "submission": "Formani yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring."
+      }
+    },
+    "validation": {
+      "nameRequired": "Ism kiritilishi shart",
+      "emailRequired": "Elektron pochta kiritilishi shart",
+      "emailInvalid": "Iltimos, to'g'ri elektron pochta kiriting",
+      "phoneRequired": "Telefon raqami kiritilishi shart",
+      "phoneInvalid": "Iltimos, to'g'ri telefon raqamini kiriting",
+      "messageRequired": "Xabar kiritilishi shart"
+    },
+    "mobileImages": {
+      "alt1": "Tezrent mobil ilova namunasi 1",
+      "alt2": "Tezrent mobil ilova namunasi 2",
+      "alt3": "Tezrent mobil ilova namunasi 3"
+    }
+  },
+  "termsAndConditions": {
+    "heading": "Shartlar va qoidalar",
+    "intro": "Tezrent texnika ijarasi xizmatidan foydalanishdan oldin ushbu shartlar va qoidalarni diqqat bilan o'qib chiqing. Xizmatimizga kirish yoki undan foydalanish orqali siz ushbu shartlarga rioya qilishga rozilik bildirasiz.",
+    "lastUpdated": "Oxirgi yangilanish: {date}",
+    "updateDate": "17-sentabr 2025-yil",
+    "agreement": "Tezrent xizmatlaridan foydalanib, siz ushbu Shartlar va qoidalarni o'qib chiqqanligingizni va tushunganligingizni tan olasiz va ularga amal qilishga rozilik bildirasiz.",
+    "returnHome": "Bosh sahifaga qaytish",
+    "sections": [
+      {
+        "title": "Uskunalarni ijaraga olish shartlari",
+        "content": "<p>1.1. Ijara muddati: Minimal ijara muddati 24 soat. Ijara davrlari uskunani olish yoki yetkazib berish vaqtidan boshlanadi.</p><p>1.2. Bron qilish: Uskunalarni bron qilish kamida 24 soat oldin amalga oshirilishi kerak.</p><p>1.3. Bekor qilish: Ijara miqdorining 25% miqdorida bekor qilish to'lovidan qochish uchun bekor qilish rejalashtirilgan ijaradan kamida 24 soat oldin amalga oshirilishi kerak.</p><p>1.4. Uzaytirish: Ijara uzaytirishlarini joriy ijara davrining oxiridan oldin so'rash kerak va mavjudlikka bog'liq.</p>"
+      },
+      {
+        "title": "To'lov shartlari",
+        "content": "<p>2.1. Tariflar: Barcha ijara tariflari, agar boshqacha ko'rsatilmagan bo'lsa, 24 soatlik asosda hisoblanadi.</p><p>2.2. Garov to'lovi: Uskunani ijaraga olishdan oldin garov to'lovi talab qilinishi mumkin. Garov miqdori uskunaning qiymatiga qarab farq qiladi.</p><p>2.3. To'lov usullari: Biz kredit kartalar, debet kartalar va tasdiqlangan xarid buyurtmalarini qabul qilamiz.</p><p>2.4. Kechikish to'lovlari: Kelishilgan qaytarish vaqtidan keyin qaytarilgan uskunalar standart kunlik tarif bo'yicha qo'shimcha to'lovlarni keltirib chiqaradi.</p>"
+      },
+      {
+        "title": "Uskunalardan foydalanish va xavfsizlik",
+        "content": "<p>3.1. Vakolatli operatorlar: Uskunalarni faqat yosh va tajriba bo'yicha minimal talablarga javob beradigan malakali shaxslar boshqarishi mumkin.</p><p>3.2. To'g'ri foydalanish: Uskunalar ishlab chiqaruvchi ko'rsatmalariga muvofiq va faqat mo'ljallangan maqsadda ishlatilishi kerak.</p><p>3.3. Xavfsizlik talablari: Foydalanuvchilar barcha xavfsizlik protokollariga rioya qilishlari va tegishli himoya vositalarini kiyishlari kerak.</p><p>3.4. Taqiqlangan faoliyatlar: Uskunalar noqonuniy faoliyatlar uchun yoki og'ir ob-havo hodisalari shu jumladan xavfli sharoitlarda ishlatilmasligi kerak.</p>"
+      },
+      {
+        "title": "Zarar va javobgarlik",
+        "content": "<p>4.1. Uskunalarni tekshirish: Mijozlar uskunalarni qabul qilishda tekshirishlari va mavjud zararlar haqida xabar berishlari kerak.</p><p>4.2. Javobgarlik: Mijoz normal yeyilish va yirtilishni istisno qilganda, ijara davri mobaynida uskunalarga etkazilgan barcha zararlar uchun javobgardir.</p><p>4.3. Sug'urta: Ijaradan oldin tegishli sug'urta dalili talab qilinishi mumkin.</p><p>4.4. Javobgarlikning cheklanishi: Tezrent ijara uskunalaridan foydalanish natijasida yuzaga keladigan har qanday bilvosita, maxsus, tasodifiy yoki oqibatli zararlar uchun javobgar emas.</p>"
+      },
+      {
+        "title": "Yetkazib berish va qaytarish",
+        "content": "<p>5.1. Yetkazib berish: Yetkazib berish xizmatlari belgilangan xizmat ko'rsatish hududida qo'shimcha to'lov evaziga mavjud.</p><p>5.2. Qaytarish holati: Uskunalar toza, zarar ko'rmagan holatda, yoqilg'i darajalari olingandagi darajaga mos kelishi kerak.</p><p>5.3. Kech qaytarish: Kelishilgan vaqtdan keyin qaytarilgan uskunalar qo'shimcha kunlik to'lovlarni keltirib chiqaradi.</p><p>5.4. Tozalash uchun to'lov: Agar uskuna haddan tashqari iflos holda qaytarilsa, tozalash uchun to'lov qo'llaniladi.</p>"
+      }
+    ]
+  },
+  "downloadSection": {
+    "comingSoon": "Tez kunda",
+    "heading": {
+      "part1": "Texnikalarni ijara olish",
+      "part2": "yo'lda"
+    },
+    "subheading": "Sevimli platformangizga yuklab oling va ijaralarni istalgan joyda, istalgan vaqtda boshqaring.",
+    "benefits": [
+      {
+        "title": "Tezkor bron qilish",
+        "desc": "Uskunalarni bir necha daqiqada toping va band qiling"
+      },
+      {
+        "title": "Real vaqtda kuzatish",
+        "desc": "Texnikangiz qayerda ekanligini har doim biling"
+      },
+      {
+        "title": "Xavfsiz to'lovlar",
+        "desc": "Tez, shifrlangan tranzaksiyalar"
+      }
+    ],
+    "appStore": {
+      "alt": "App Store'dan yuklab olish",
+      "ariaLabel": "App Store havolasi tez kunda"
+    },
+    "googlePlay": {
+      "alt": "Google Play'dan olish",
+      "ariaLabel": "Google Play havolasi tez kunda"
+    },
+    "notification": {
+      "title": "Bildirishnoma oling",
+      "description": "Ilovamiz ishga tushganda birinchi bo'lib xabardor bo'ling. Sizga eksklyuziv erta kirish va maxsus takliflar haqida bildirishnoma yuboramiz.",
+      "emailPlaceholder": "Elektron pochta manzilingiz",
+      "button": "Menga xabar bering",
+      "success": "Rahmat! Ilova ishga tushganda birinchi bo'lib xabardor bo'lasiz."
+    },
+    "terms": {
+      "agree": "Men quyidagilarni qabul qilaman",
+      "termsLink": "Foydalanish shartlari",
+      "and": "va",
+      "privacyLink": "Maxfiylik siyosati"
+    },
+    "footer": {
+      "description": "Og'ir texnikalarni ijaraga olishni hamma uchun oson, hamyonbop va qulay qilish.",
+      "company": {
+        "title": "Kompaniya",
+        "links": [
+          "Haqimizda",
+          "Karyera",
+          "Blog",
+          "Matbuot"
+        ]
+      },
+      "legal": {
+        "title": "Huquqiy",
+        "links": [
+          "Shartlar",
+          "Maxfiylik",
+          "Kukilar",
+          "Litsenziyalar"
+        ]
+      },
+      "copyright": "Tezrent™ bilan texnika ijarasi. Barcha huquqlar himoyalangan."
+    }
+  }
 }

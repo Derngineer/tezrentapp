@@ -1,20 +1,41 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
 
 export default function MobileMockups() {
-  // Mockup data with titles and image paths
+  const t = useTranslations('mobileMockups');
+  
+  // Mockup data with translated titles and image paths
   const mockups = [
-    { title: "Your Tasks", image: "/M1.png", alt: "Task management screen" },
-    { title: "Our Platform", image: "/M2.png", alt: "Platform overview screen" },
-    { title: "Equipment", image: "/M3.png", alt: "Machine listing screen" }
+    { title: t('mockups.0.title'), image: "/M1.png", alt: t('mockups.0.alt') },
+    { title: t('mockups.1.title'), image: "/M2.png", alt: t('mockups.1.alt') },
+    { title: t('mockups.2.title'), image: "/M3.png", alt: t('mockups.2.alt') }
+  ];
+
+  // Features array from translations
+  const features = [
+    {
+      title: t('features.0.title'),
+      description: t('features.0.description')
+    },
+    {
+      title: t('features.1.title'),
+      description: t('features.1.description')
+    },
+    {
+      title: t('features.2.title'),
+      description: t('features.2.description')
+    }
   ];
 
   return (
     <div className="w-full py-12 px-4">
       {/* Section Header */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Experience Our Mobile App</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t('heading')}</h2>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-          Manage your equipment rentals on the go with our intuitive mobile application
+          {t('subheading')}
         </p>
       </div>
       
@@ -60,16 +81,14 @@ export default function MobileMockups() {
       
       {/* Additional Feature Points */}
       <div className="max-w-4xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {["Manage Your Rentals", "Track Equipment", "Instant Support"].map((feature, index) => (
+        {features.map((feature, index) => (
           <div key={index} className="text-center">
             <div className="w-12 h-12 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
               <span className="text-blue-600 text-xl font-bold">{index + 1}</span>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature}</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
             <p className="text-gray-600">
-              {index === 0 && "Schedule, extend, or cancel rentals directly from your phone"}
-              {index === 1 && "Real-time updates on equipment location and status"}
-              {index === 2 && "Connect with support representatives in seconds"}
+              {feature.description}
             </p>
           </div>
         ))}

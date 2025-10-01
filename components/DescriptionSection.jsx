@@ -1,38 +1,40 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
 import { FaSearch, FaCalendarCheck, FaTruck, FaUndo, FaPlay } from "react-icons/fa";
 
 export default function DescriptionSection() {
+  const t = useTranslations('description');
   const [activeStep, setActiveStep] = useState(1);
   
   const steps = [
     {
       id: 1,
       icon: <FaSearch />,
-      title: "Browse & Search",
-      description: "Explore a wide range of machinery and filter by type, size, or availability to find exactly what you need.",
+      title: t('steps.step1.title'),
+      description: t('steps.step1.description'),
       color: "blue"
     },
     {
       id: 2,
       icon: <FaCalendarCheck />,
-      title: "Easy Booking",
-      description: "Select your equipment, choose rental dates, and book instantly through our secure platform.",
+      title: t('steps.step2.title'),
+      description: t('steps.step2.description'),
       color: "green"
     },
     {
       id: 3,
       icon: <FaTruck />,
-      title: "Seamless Delivery or Pickup",
-      description: "Arrange for delivery to your site or pick up the machinery at your convenience.",
+      title: t('steps.step3.title'),
+      description: t('steps.step3.description'),
       color: "orange"
     },
     {
       id: 4,
       icon: <FaUndo />,
-      title: "Manage & Return",
-      description: "Track your rentals, extend periods if needed, and return equipment easily—all within the app.",
+      title: t('steps.step4.title'),
+      description: t('steps.step4.description'),
       color: "purple"
     }
   ];
@@ -135,10 +137,10 @@ export default function DescriptionSection() {
         {/* Right: How It Works */}
         <div className="w-full md:w-2/3 flex flex-col items-center md:items-start">
           <h2 className="text-4xl font-extrabold text-blue-900 mb-6 text-center md:text-left animate-fade-in-down">
-            How It Works
+            {t('heading')}
           </h2>
           <p className="text-lg text-gray-700 mb-8 text-center md:text-left animate-fade-in">
-            Renting machinery with Tezrent is simple, transparent, and efficient. Our app is designed to make your equipment rental experience smooth from start to finish.
+            {t('intro')}
           </p>
           
           {/* Step progress indicator */}

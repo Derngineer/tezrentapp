@@ -174,7 +174,112 @@
   },
   "about": {
     "title": "About Us",
-    "content": "Tezrent connects contractors with reliable machinery suppliers to keep projects moving."
+    "content": "Tezrent connects contractors with reliable machinery suppliers to keep projects moving.",
+    "sectionHeader": {
+      "badge": "About Tezrent",
+      "title": "Your Trusted Equipment Partner",
+      "subtitle": "We're revolutionizing equipment rental with our extensive inventory, reliable service, and seamless experience."
+    },
+    "tabs": {
+      "mission": "Our Mission",
+      "story": "Our Story",
+      "approach": "Our Approach"
+    },
+    "mission": {
+      "paragraph1": "At Tezrent, our mission is to make quality equipment accessible to everyone, from DIY homeowners to large construction companies. We believe the right tools should never be a barrier to getting the job done right.",
+      "paragraph2": "We've built a platform that simplifies equipment rental with transparent pricing, reliable maintenance, and exceptional customer support—ensuring you can focus on your project, not your tools."
+    },
+    "story": {
+      "paragraph1": "Founded in 2018 by a team of contractors and tech innovators, Tezrent was born from frustration with traditional equipment rental processes. We saw an opportunity to leverage technology to create a more efficient, user-friendly rental experience.",
+      "paragraph2": "Starting with just 50 items in a small warehouse, we've grown to over 1,200 pieces of equipment across multiple categories, serving thousands of satisfied customers nationwide."
+    },
+    "approach": {
+      "paragraph1": "Our approach centers on three core principles: quality, reliability, and convenience. Every piece of equipment undergoes rigorous maintenance and testing before each rental.",
+      "paragraph2": "We've developed streamlined logistics to ensure on-time delivery and pickup, and our customer support team is always ready to provide expert advice on choosing and using the right equipment for your specific needs."
+    },
+    "features": {
+      "quality": {
+        "title": "Quality Equipment",
+        "description": "Regularly maintained and tested tools from trusted brands."
+      },
+      "delivery": {
+        "title": "Fast Delivery",
+        "description": "Same-day or next-day delivery options to your location."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Expert advice and technical assistance whenever you need it."
+      },
+      "terms": {
+        "title": "Flexible Terms",
+        "description": "Rent by hour, day, week, or month to fit your schedule."
+      }
+    },
+    "equipmentRange": {
+      "title": "Our Equipment Range",
+      "subtitle": "From small hand tools to heavy machinery, we have everything you need",
+      "categories": {
+        "homeDiy": {
+          "name": "Home & DIY",
+          "count": "240",
+          "examples": "Drills, Sanders, Ladders"
+        },
+        "construction": {
+          "name": "Construction",
+          "count": "320",
+          "examples": "Jackhammers, Concrete Mixers"
+        },
+        "landscaping": {
+          "name": "Landscaping",
+          "count": "180",
+          "examples": "Lawn Mowers, Trimmers"
+        },
+        "industrial": {
+          "name": "Industrial",
+          "count": "275",
+          "examples": "Generators, Compressors"
+        },
+        "automotive": {
+          "name": "Automotive",
+          "count": "150",
+          "examples": "Diagnostic Tools, Lifts"
+        },
+        "eventAv": {
+          "name": "Event & AV",
+          "count": "125",
+          "examples": "Cameras, Sound Systems"
+        }
+      },
+      "browseCategory": "Browse Category"
+    },
+    "stats": {
+      "equipmentItems": "Equipment Items",
+      "satisfaction": "Satisfaction",
+      "servingSince": "Serving Since 2018",
+      "trustedBy": "Trusted by 10,000+ customers"
+    }
+  },
+  "description": {
+    "heading": "How It Works",
+    "intro": "Renting machinery with Tezrent is simple, transparent, and efficient. Our app is designed to make your equipment rental experience smooth from start to finish.",
+    "steps": {
+      "step1": {
+        "title": "Browse & Search",
+        "description": "Explore a wide range of machinery and filter by type, size, or availability to find exactly what you need."
+      },
+      "step2": {
+        "title": "Easy Booking",
+        "description": "Select your equipment, choose rental dates, and book instantly through our secure platform."
+      },
+      "step3": {
+        "title": "Seamless Delivery or Pickup",
+        "description": "Arrange for delivery to your site or pick up the machinery at your convenience."
+      },
+      "step4": {
+        "title": "Manage & Return",
+        "description": "Track your rentals, extend periods if needed, and return equipment easily—all within the app."
+      }
+    }
   },
   "form": {
     "title": "Contact Us",
@@ -200,8 +305,128 @@
       "formError": "Something went wrong. Please try again."
     }
   },
+  "clientForm": {
+    "encouragement": {
+      "heading": "Shape the Future of Tezrent!",
+      "description": "We're building Tezrent with your needs in mind. Share what features, equipment, or improvements you'd love to see in our app!",
+      "feedbackLabel": "Your feedback drives our roadmap:"
+    },
+    "feedbackCategories": {
+      "equipmentSuggestions": "Equipment suggestions",
+      "featureRequests": "Feature requests",
+      "uxImprovements": "UX improvements",
+      "earlyAccess": "Early access program"
+    },
+    "success": {
+      "heading": "Thank You!",
+      "message": "Your submission has been received. We appreciate your feedback and will be in touch soon.",
+      "submitAnother": "Submit Another Response"
+    },
+    "form": {
+      "heading": "Get In Touch",
+      "description": "Fill in your details and tell us about your rental needs.",
+      "fields": {
+        "name": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "company": "Company (optional)",
+        "message": "Your Message"
+      },
+      "buttons": {
+        "submitting": "Submitting...",
+        "tryAgain": "Try Again",
+        "submit": "Submit Feedback"
+      },
+      "errors": {
+        "submission": "There was an error submitting your form. Please try again."
+      }
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Please enter a valid phone number",
+      "messageRequired": "Message is required"
+    },
+    "mobileImages": {
+      "alt1": "Tezrent mobile app mockup 1",
+      "alt2": "Tezrent mobile app mockup 2",
+      "alt3": "Tezrent mobile app mockup 3"
+    }
+  },
+  "mobileMockups": {
+    "heading": "Experience Our Mobile App",
+    "subheading": "Manage your equipment rentals on the go with our intuitive mobile application",
+    "mockups": {
+      "0": {
+        "title": "Your Tasks",
+        "alt": "Task management screen"
+      },
+      "1": {
+        "title": "Our Platform",
+        "alt": "Platform overview screen"
+      },
+      "2": {
+        "title": "Equipment",
+        "alt": "Machine listing screen"
+      }
+    },
+    "features": {
+      "0": {
+        "title": "Manage Your Rentals",
+        "description": "Schedule, extend, or cancel rentals directly from your phone"
+      },
+      "1": {
+        "title": "Track Equipment",
+        "description": "Real-time updates on equipment location and status"
+      },
+      "2": {
+        "title": "Instant Support",
+        "description": "Connect with support representatives in seconds"
+      }
+    }
+  },
   "reviews": {
-    "title": "What our customers say"
+    "title": "What Our Clients Say",
+    "badge": "Testimonials",
+    "prevReview": "Previous review",
+    "nextReview": "Next review",
+    "goToSlide": "Go to review slide {number}",
+    "autoplayOn": "Autoplay On",
+    "autoplayOff": "Autoplay Off",
+    "items": {
+      "0": {
+        "name": "Jane Doe",
+        "role": "Construction Manager",
+        "text": "Excellent service! The machinery was top-notch and the process was seamless."
+      },
+      "1": {
+        "name": "John Smith",
+        "role": "Project Director",
+        "text": "Quick delivery and very professional staff. Highly recommend for any project."
+      },
+      "2": {
+        "name": "Alice Johnson",
+        "role": "Site Engineer",
+        "text": "Affordable rates and reliable equipment. Will rent again!"
+      },
+      "3": {
+        "name": "Michael Brown",
+        "role": "Contractor",
+        "text": "Customer support was very helpful and responsive."
+      },
+      "4": {
+        "name": "Emily Davis",
+        "role": "Operations Manager",
+        "text": "The best rental experience I've had. Everything was as promised."
+      },
+      "5": {
+        "name": "Chris Lee",
+        "role": "Independent Builder",
+        "text": "Easy booking and great selection of machinery."
+      }
+    }
   },
   "download": {
     "title": "Download the app",
@@ -210,7 +435,102 @@
   "terms": {
     "title": "Terms & Conditions"
   },
+  "termsAndConditions": {
+    "heading": "Terms and Conditions",
+    "intro": "Please read these terms and conditions carefully before using the Tezrent machinery rental service. By accessing or using our service, you agree to be bound by these terms.",
+    "lastUpdated": "Last updated: {date}",
+    "updateDate": "September 17, 2025",
+    "agreement": "By using Tezrent services, you acknowledge that you have read and understood these Terms and Conditions and agree to be bound by them.",
+    "returnHome": "Return to Home",
+    "sections": [
+      {
+        "title": "Equipment Rental Terms",
+        "content": "<p>1.1. Rental Period: Minimum rental period is 24 hours. Rental periods begin at the time of equipment pickup or delivery.</p><p>1.2. Reservation: Equipment reservations must be made at least 24 hours in advance.</p><p>1.3. Cancellation: Cancellations must be made at least 24 hours before the scheduled rental to avoid a cancellation fee of 25% of the rental amount.</p><p>1.4. Extensions: Rental extensions must be requested before the end of the current rental period and are subject to availability.</p>"
+      },
+      {
+        "title": "Payment Terms",
+        "content": "<p>2.1. Rates: All rental rates are calculated on a 24-hour basis unless otherwise specified.</p><p>2.2. Security Deposit: A security deposit may be required before equipment rental. The deposit amount varies based on the equipment value.</p><p>2.3. Payment Methods: We accept credit cards, debit cards, and approved purchase orders.</p><p>2.4. Late Fees: Equipment returned after the agreed return time will incur additional charges at the standard daily rate.</p>"
+      },
+      {
+        "title": "Equipment Usage & Safety",
+        "content": "<p>3.1. Authorized Operators: Only qualified individuals who meet minimum age and experience requirements may operate the equipment.</p><p>3.2. Proper Use: Equipment must be used in accordance with manufacturer guidelines and only for its intended purpose.</p><p>3.3. Safety Requirements: Users must follow all safety protocols and wear appropriate protective equipment.</p><p>3.4. Prohibited Activities: Equipment may not be used for illegal activities or in unsafe conditions including severe weather events.</p>"
+      },
+      {
+        "title": "Damage & Liability",
+        "content": "<p>4.1. Equipment Inspection: Customers must inspect equipment upon receipt and report any existing damage.</p><p>4.2. Responsibility: The customer is responsible for all damage to equipment during the rental period, excluding normal wear and tear.</p><p>4.3. Insurance: Proof of appropriate insurance may be required prior to rental.</p><p>4.4. Limitation of Liability: Tezrent is not liable for any indirect, special, incidental, or consequential damages resulting from the use of rental equipment.</p>"
+      },
+      {
+        "title": "Delivery & Return",
+        "content": "<p>5.1. Delivery: Delivery services are available within the specified service area for an additional fee.</p><p>5.2. Return Condition: Equipment must be returned in clean, undamaged condition with fuel levels matching those at pickup.</p><p>5.3. Late Returns: Equipment returned after the agreed-upon time will incur additional daily charges.</p><p>5.4. Cleaning Fee: A cleaning fee will be applied if equipment is returned excessively dirty.</p>"
+      }
+    ]
+  },
   "footer": {
     "rights": "All rights reserved."
+  },
+  "downloadSection": {
+    "comingSoon": "Coming Soon",
+    "heading": {
+      "part1": "Rent Machinery",
+      "part2": "On The Go"
+    },
+    "subheading": "Download on your favorite platform and manage rentals from anywhere, anytime.",
+    "benefits": [
+      {
+        "title": "Instant Booking",
+        "desc": "Find and reserve equipment in minutes"
+      },
+      {
+        "title": "Real-time Tracking",
+        "desc": "Know where your machinery is at all times"
+      },
+      {
+        "title": "Secure Payments",
+        "desc": "Fast, encrypted transactions"
+      }
+    ],
+    "appStore": {
+      "alt": "Download on the App Store",
+      "ariaLabel": "App Store link coming soon"
+    },
+    "googlePlay": {
+      "alt": "Get it on Google Play",
+      "ariaLabel": "Google Play link coming soon"
+    },
+    "notification": {
+      "title": "Get Notified",
+      "description": "Be the first to know when our app launches. We'll send you a notification about exclusive early access and special offers.",
+      "emailPlaceholder": "Your email address",
+      "button": "Notify Me",
+      "success": "Thank you! You'll be the first to know when the app launches."
+    },
+    "terms": {
+      "agree": "I agree to the",
+      "termsLink": "Terms and Conditions",
+      "and": "and",
+      "privacyLink": "Privacy Policy"
+    },
+    "footer": {
+      "description": "Making heavy machinery rental easy, affordable, and accessible for everyone.",
+      "company": {
+        "title": "Company",
+        "links": [
+          "About",
+          "Careers",
+          "Blog",
+          "Press"
+        ]
+      },
+      "legal": {
+        "title": "Legal",
+        "links": [
+          "Terms",
+          "Privacy",
+          "Cookies",
+          "Licenses"
+        ]
+      },
+      "copyright": "Machinery Rental with Tezrent™. All rights reserved."
+    }
   }
 }

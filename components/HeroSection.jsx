@@ -67,7 +67,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen w-full flex items-center justify-center bg-center bg-cover pt-28 sm:pt-32"
+      className="relative w-full flex items-center justify-center bg-center bg-cover pt-16 sm:pt-20 md:pt-24 lg:pt-28 min-h-[100dvh] overflow-x-hidden"
       style={{
         backgroundImage: "linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.75)), url('/bannerimage.png')",
       }}
@@ -77,34 +77,34 @@ export default function HeroSection() {
         style={{backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M0 0h20v20H0z\" fill=\"%23FFFFFF\" fill-opacity=\".1\"/%3E%3C/svg%3E')", backgroundSize: "20px 20px"}}
       />
       
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full h-full px-4 max-w-6xl mx-auto">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full h-full px-4 max-w-6xl mx-auto pb-16">
         {/* Left: Text Content */}
         <div 
-          className={`w-full md:w-1/2 flex flex-col items-start justify-center md:pr-16 transition-all duration-1000 ${
+          className={`w-full md:w-1/2 flex flex-col items-start justify-center md:pr-8 lg:pr-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           {/* Badge with translation */}
-          <span className="bg-blue-600 text-white text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-4 inline-flex items-center font-semibold">
+          <span className="bg-blue-600 text-white text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-2 sm:mb-4 inline-flex items-center font-semibold">
             <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
             {t('badge')}
           </span>
           
-          {/* Title with translation */}
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-6 text-left drop-shadow-lg leading-tight">
+          {/* Title with translation - Reduced size for small screens */}
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-3 sm:mb-6 text-left drop-shadow-lg leading-tight">
             {t('title')} <span className="text-blue-300">{t('titleHighlight')}<sup className="text-sm">™</sup></span>
           </h1>
           
-          {/* Subtitle with translation */}
-          <p className="text-lg sm:text-2xl text-white mb-8 text-left max-w-2xl drop-shadow opacity-90">
+          {/* Subtitle with translation - More compact on small screens */}
+          <p className="text-base xs:text-lg sm:text-xl lg:text-2xl text-white mb-4 sm:mb-6 text-left max-w-2xl drop-shadow opacity-90">
             {t('subtitle')}
           </p>
           
-          {/* Trust indicators */}
-          <div className="mb-10 flex flex-wrap gap-6 items-center">
+          {/* Trust indicators - More compact layout */}
+          <div className="mb-4 sm:mb-8 flex flex-wrap gap-3 sm:gap-6 items-center">
             <div className="flex items-center">
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center">
-                <span className="text-white font-bold text-2xl">4.9</span>
+              <div className="bg-white/20 backdrop-blur-sm rounded-lg px-2 sm:px-3 py-1 sm:py-1.5 flex items-center">
+                <span className="text-white font-bold text-xl sm:text-2xl">4.9</span>
                 <div className="ml-2">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
@@ -117,25 +117,25 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-            <div className="text-white/80 flex items-center gap-2 text-sm">
-              <span className="w-1 h-1 bg-white/60 rounded-full"></span>
+            <div className="text-white/80 flex items-center gap-1 sm:gap-2 text-xs sm:text-sm">
+              <span className="hidden sm:block w-1 h-1 bg-white/60 rounded-full"></span>
               <span>{t('machineryOptions')}</span>
-              <span className="w-1 h-1 bg-white/60 rounded-full"></span>
+              <span className="hidden sm:block w-1 h-1 bg-white/60 rounded-full"></span>
               <span>{t('support')}</span>
             </div>
           </div>
           
-          {/* Buttons with translations */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-start w-full sm:w-auto">
+          {/* Buttons with translations - Smaller on small screens */}
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-start w-full sm:w-auto">
             <a
               href="#catalog"
-              className="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-blue-700 hover:text-white transition-all duration-300 border border-white flex-grow sm:flex-grow-0 text-center"
+              className="bg-white text-blue-700 px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold text-sm sm:text-base lg:text-lg shadow-lg hover:bg-blue-700 hover:text-white transition-all duration-300 border border-white flex-grow sm:flex-grow-0 text-center"
             >
               {t('downloadButton')}
             </a>
             <a
               href="#contact"
-              className="border border-white text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 flex-grow sm:flex-grow-0 text-center"
+              className="border border-white text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 flex-grow sm:flex-grow-0 text-center"
             >
               {t('learnMoreButton')}
             </a>
@@ -144,12 +144,12 @@ export default function HeroSection() {
         
         {/* Right: Floating Video Container */}
         <div 
-          className={`w-full md:w-1/2 flex items-center justify-center mt-16 md:mt-0 transition-all duration-1000 ${
+          className={`w-full md:w-1/2 flex items-center justify-center mt-8 sm:mt-12 md:mt-0 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
           style={{transitionDelay: "200ms"}}
         >
-          {/* Video container */}
+          {/* Video container - Smaller on small screens */}
           <div className="relative">
             {/* Video element */}
             <div className="relative z-10">
@@ -159,7 +159,7 @@ export default function HeroSection() {
                 loop 
                 muted 
                 playsInline
-                className="rounded-[2.5rem] shadow-xl w-[280px] h-[560px] object-cover"
+                className="rounded-[2rem] sm:rounded-[2.5rem] shadow-xl w-[200px] h-[400px] xs:w-[220px] xs:h-[440px] sm:w-[250px] sm:h-[500px] md:w-[280px] md:h-[560px] object-cover"
               >
                 <source src="/videos/video2.webm" type="video/webm" />
                 <source src="/videos/video2.mp4" type="video/mp4" />
@@ -168,8 +168,8 @@ export default function HeroSection() {
               
               {/* Loading indicator */}
               {isLoading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-[2.5rem] z-20">
-                  <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-[2rem] sm:rounded-[2.5rem] z-20">
+                  <div className="w-8 h-8 sm:w-12 sm:h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                 </div>
               )}
             </div>
@@ -177,13 +177,13 @@ export default function HeroSection() {
         </div>
       </div>
       
-      {/* Scroll indicator with translation */}
+      {/* Scroll indicator with translation - Repositioned */}
       <div 
-        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity"
+        className="absolute bottom-2 sm:bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity"
         onClick={scrollToNextSection}
       >
-        <span className="text-white/50 text-xs uppercase tracking-widest mb-2">{t('scroll')}</span>
-        <FaAngleDown className="text-white/50 text-2xl animate-bounce" />
+        <span className="text-white/50 text-xs uppercase tracking-widest mb-1 sm:mb-2">{t('scroll')}</span>
+        <FaAngleDown className="text-white/50 text-xl sm:text-2xl animate-bounce" />
       </div>
     </section>
   );

@@ -3,51 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaQuoteLeft } from "react-icons/fa";
-
-const reviews = [
-  {
-    name: "Jane Doe",
-    role: "Construction Manager",
-    text: "Excellent service! The machinery was top-notch and the process was seamless.",
-    stars: 5,
-    image: "/image1.png",
-  },
-  {
-    name: "John Smith",
-    role: "Project Director",
-    text: "Quick delivery and very professional staff. Highly recommend for any project.",
-    stars: 4.5,
-    image: "/image2.png",
-  },
-  {
-    name: "Alice Johnson",
-    role: "Site Engineer",
-    text: "Affordable rates and reliable equipment. Will rent again!",
-    stars: 4,
-    image: "/image3.png",
-  },
-  {
-    name: "Michael Brown",
-    role: "Contractor",
-    text: "Customer support was very helpful and responsive.",
-    stars: 4.5,
-    image: "/image4.png",
-  },
-  {
-    name: "Emily Davis",
-    role: "Operations Manager",
-    text: "The best rental experience I've had. Everything was as promised.",
-    stars: 5,
-    image: "/image5.png",
-  },
-  {
-    name: "Chris Lee",
-    role: "Independent Builder",
-    text: "Easy booking and great selection of machinery.",
-    stars: 3.5,
-    image: "/image6.png",
-  },
-];
+import { useTranslations } from 'next-intl';
 
 function StarRating({ count }) {
   const fullStars = Math.floor(count);
@@ -85,10 +41,57 @@ function StarRating({ count }) {
 }
 
 export default function ReviewsCarousel() {
+  const t = useTranslations('reviews');
   const [current, setCurrent] = useState(0);
   const [slideCount, setSlideCount] = useState(3);
   const [autoplay, setAutoplay] = useState(true);
   const [isHovering, setIsHovering] = useState(false);
+  
+  // Create reviews array using translations
+  const reviews = [
+    {
+      name: t('items.0.name'),
+      role: t('items.0.role'),
+      text: t('items.0.text'),
+      stars: 5,
+      image: "/image1.png",
+    },
+    {
+      name: t('items.1.name'),
+      role: t('items.1.role'),
+      text: t('items.1.text'),
+      stars: 4.5,
+      image: "/image2.png",
+    },
+    {
+      name: t('items.2.name'),
+      role: t('items.2.role'),
+      text: t('items.2.text'),
+      stars: 4,
+      image: "/image3.png",
+    },
+    {
+      name: t('items.3.name'),
+      role: t('items.3.role'),
+      text: t('items.3.text'),
+      stars: 4.5,
+      image: "/image4.png",
+    },
+    {
+      name: t('items.4.name'),
+      role: t('items.4.role'),
+      text: t('items.4.text'),
+      stars: 5,
+      image: "/image5.png",
+    },
+    {
+      name: t('items.5.name'),
+      role: t('items.5.role'),
+      text: t('items.5.text'),
+      stars: 3.5,
+      image: "/image6.png",
+    },
+  ];
   
   // Responsive slide count
   useEffect(() => {
@@ -130,8 +133,8 @@ export default function ReviewsCarousel() {
     <section className="py-12 bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-7xl w-full mx-auto flex flex-col items-center px-4 sm:px-6">
         <div className="mb-16 text-center">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
-          <h2 className="text-4xl font-bold mt-2 text-gray-800">What Our Clients Say</h2>
+          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">{t('badge')}</span>
+          <h2 className="text-4xl font-bold mt-2 text-gray-800">{t('title')}</h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
         </div>
         
@@ -187,7 +190,7 @@ export default function ReviewsCarousel() {
           <button
             onClick={prev}
             className="absolute left-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow hover:bg-blue-100 transition-all duration-200 hover:scale-110 z-10 border border-gray-200"
-            aria-label="Previous review"
+            aria-label={t('prevReview')}
           >
             <svg className="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -197,7 +200,7 @@ export default function ReviewsCarousel() {
           <button
             onClick={next}
             className="absolute right-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow hover:bg-blue-100 transition-all duration-200 hover:scale-110 z-10 border border-gray-200"
-            aria-label="Next review"
+            aria-label={t('nextReview')}
           >
             <svg className="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -215,7 +218,7 @@ export default function ReviewsCarousel() {
                   : "bg-gray-300 hover:bg-gray-400"
               }`}
               onClick={() => setCurrent(idx)}
-              aria-label={`Go to review slide ${idx + 1}`}
+              aria-label={t('goToSlide', { number: idx + 1 })}
             />
           ))}
         </div>
@@ -229,7 +232,7 @@ export default function ReviewsCarousel() {
           }`}
         >
           <span className={`block w-2 h-2 rounded-full ${autoplay ? "bg-blue-700" : "bg-gray-600"}`}></span>
-          {autoplay ? "Autoplay On" : "Autoplay Off"}
+          {autoplay ? t('autoplayOn') : t('autoplayOff')}
         </button>
       </div>
     </section>
