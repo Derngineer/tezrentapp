@@ -29,7 +29,8 @@ body {
 
 html {
   overflow-x: hidden; /* Additional safeguard for horizontal scrolling */
-  scroll-behavior: smooth; /* Optional: for smooth scrolling */
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Optional: for smooth scrolling */
 }
 
 /* Collapse first/last element margins inside sections */

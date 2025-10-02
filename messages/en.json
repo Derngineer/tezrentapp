@@ -10,7 +10,8 @@
     "terms": "Terms",
     "catalog": "Catalog",
     "getStarted": "Get Started",
-    "support": "Support"
+    "support": "Support",
+    "applyButton": "Apply Now"
   },
   "hero": {
     "badge": "Coming Soon",
@@ -533,4 +534,5 @@
       "copyright": "Machinery Rental with Tezrent™. All rights reserved."
     }
   }
+    
 }

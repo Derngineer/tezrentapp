@@ -8,7 +8,11 @@
     "terms": "Shartlar",
     "catalog": "Katalog",
     "getStarted": "Boshlash",
-    "support": "Qo'llab-quvvatlash"
+    "support": "Qo'llab-quvvatlash",
+    "applyButton": "Ariza topshirish"
+  },
+  "header": {
+    "applyButton": "Ariza topshirish"
   },
   "hero": {
     "badge": "Tez orada",

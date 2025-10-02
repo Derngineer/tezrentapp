@@ -8,7 +8,8 @@
     "terms": "الشروط",
     "catalog": "الكتالوج",
     "getStarted": "ابدأ الآن",
-    "support": "الدعم"
+    "support": "الدعم",
+    "applyButton": "قدم الآن"
   },
   "hero": {
     "badge": "قريباً",
@@ -524,4 +525,5 @@
       "copyright": "تأجير الآلات مع Tezrent™. جميع الحقوق محفوظة."
     }
   }
+
 }

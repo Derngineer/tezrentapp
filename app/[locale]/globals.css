@@ -30,6 +30,7 @@ body {
 html {
   overflow-x: hidden; /* Additional safeguard for horizontal scrolling */
   scroll-behavior: smooth; /* Optional: for smooth scrolling */
+  scroll-padding-top: 80px;
 }
 .section-block > *:first-child {
   margin-top: 0;

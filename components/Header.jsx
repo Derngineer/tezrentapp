@@ -14,9 +14,8 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("");
   const headerRef = useRef(null);
 
-  // Split into TWO separate effects - one for scrolling detection, one for menu management
+  // Effects remain unchanged
   useEffect(() => {
-    // This effect handles scrolling position and active section detection
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
       
@@ -43,11 +42,10 @@ export default function Header() {
     handleScroll();
     
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []); // No dependency on open state
+  }, []);
 
-  // SEPARATE effect for closing menu on scroll
   useEffect(() => {
-    if (!open) return; // Only add listener when menu is open
+    if (!open) return;
     
     const closeMenuOnScroll = () => {
       setOpen(false);
@@ -66,7 +64,6 @@ export default function Header() {
     }
     applyHeight();
 
-    // Recompute on resize & when fonts load
     window.addEventListener('resize', applyHeight);
     const ro = new ResizeObserver(applyHeight);
     if (headerRef.current) ro.observe(headerRef.current);
@@ -97,8 +94,9 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 relative">
-        {/* Left: Logo + Language toggle */}
-        <div className="flex items-center">
+        {/* Left: Logo + Apply button + Language toggle */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          {/* Logo - now first */}
           <Link
             href={`/${locale}`}
             className="font-bold text-2xl text-gray-800 flex items-center group"
@@ -120,10 +118,18 @@ export default function Header() {
               />
             </div>
           </Link>
-
+          
+          {/* Apply Button - now second after logo */}
+          <Link
+            href="#contact"
+            className="bg-blue-600 hover:bg-blue-700 text-white py-1.5 px-4 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg active:scale-95"
+          >
+            {tNav("applyButton") || "Apply"}
+          </Link>
+          
           {/* Bright blue language toggle */}
           <LanguageSwitcher
-            className="ml-3 sm:ml-4"
+            className="ml-1 sm:ml-2"
             selectClassName="border-blue-600 text-blue-600 font-semibold focus:ring-blue-400 focus:border-blue-600"
           />
         </div>
@@ -153,44 +159,48 @@ export default function Header() {
 
           <div className="h-6 border-l border-gray-300 mx-2"></div>
 
+          {/* Get Started button */}
           <Link
             href="#download"
-            className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-full font-medium transition-all transform hover:scale-105 shadow-md hover:shadow-lg active:scale-95"
+            className="bg-gray-100 hover:bg-gray-200 text-blue-700 py-2 px-6 rounded-full font-medium transition-all transform hover:scale-105 shadow-md hover:shadow-lg active:scale-95"
           >
             {tNav("getStarted")}
           </Link>
         </nav>
 
-        {/* Burger Icon */}
-        <button
-          className="md:hidden flex flex-col justify-center items-center w-12 h-12 relative z-50"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle navigation"
-          aria-expanded={open}
-        >
-          <span
-            className={`block h-0.5 w-6 bg-gray-800 transition-all duration-300 ${
-              open ? "rotate-45 translate-y-1.5" : "mb-1.5"
-            }`}
-          ></span>
-          <span
-            className={`block h-0.5 w-6 bg-gray-800 transition-all duration-300 ${
-              open ? "opacity-0" : "mb-1.5"
-            }`}
-          ></span>
-          <span
-            className={`block h-0.5 w-6 bg-gray-800 transition-all duration-300 ${
-              open ? "-rotate-45 -translate-y-1.5" : ""
-            }`}
-          ></span>
-        </button>
+        {/* Mobile: Burger menu only */}
+        <div className="md:hidden">
+          {/* Burger Icon */}
+          <button
+            className="flex flex-col justify-center items-center w-12 h-12 relative z-50"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle navigation"
+            aria-expanded={open}
+          >
+            <span
+              className={`block h-0.5 w-6 bg-gray-800 transition-all duration-300 ${
+                open ? "rotate-45 translate-y-1.5" : "mb-1.5"
+              }`}
+            ></span>
+            <span
+              className={`block h-0.5 w-6 bg-gray-800 transition-all duration-300 ${
+                open ? "opacity-0" : "mb-1.5"
+              }`}
+            ></span>
+            <span
+              className={`block h-0.5 w-6 bg-gray-800 transition-all duration-300 ${
+                open ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
+            ></span>
+          </button>
+        </div>
 
         {/* Mobile Nav - Overlay with Animation */}
         <div
           className={`md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
             open ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
-          onClick={() => setOpen(false)} // Add this onClick handler
+          onClick={() => setOpen(false)}
         />
 
         <nav
