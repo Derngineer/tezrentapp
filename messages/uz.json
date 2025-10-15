@@ -16,14 +16,14 @@
   },
   "hero": {
     "badge": "Tez orada",
-    "title": "Og'ir texnikani ijaraga olish",
+    "title": "Har qanday ehtiyoj uchun uskunani ijaraga oling",
     "titleHighlight": "osonlik bilan",
-    "subtitle": "Keyingi loyihangiz uchun eng yaxshi qurilish uskunalarini toping, solishtiring va ijaraga oling. Tez, ishonchli va hamyonbop.",
+    "subtitle": "Kichik buyumlardan, masalan, kameralar va elektr asboblardan tortib generatorlar va ekskavatorlargacha — aynan keraklisini kerak paytda ijaraga oling. Tez, ishonchli va hamyonbop.",
     "cta": "Ilovani yuklab oling",
     "downloadButton": "Hozir yuklab oling",
     "learnMoreButton": "Ko'proq ma'lumot",
     "appStore": "App Store",
-    "machineryOptions": "500 dan ortiq texnika turlari",
+    "machineryOptions": "500+ ijara varianti",
     "support": "24/7 qo'llab-quvvatlash",
     "videoFallback": "Brauzeringiz video tegni qo'llab-quvvatlamaydi.",
     "scroll": "Pastga"
@@ -212,8 +212,8 @@
       "paragraph2": "Biz shaffof narxlar, ishonchli texnik xizmat ko'rsatish va ajoyib mijozlarni qo'llab-quvvatlash bilan uskunalar ijarasini soddalashtiradigan platforma yaratdik - bu sizga o'z loyihangizga e'tibor qaratish imkonini beradi, asboblaringizga emas."
     },
     "story": {
-      "paragraph1": "2018 yilda pudratchilar va texnologiya innovatorlari jamoasi tomonidan tashkil etilgan Tezrent an'anaviy uskunalar ijarasi jarayonlaridan norozoliklardan kelib chiqqan. Biz yanada samaraliroq, foydalanuvchi uchun qulay ijara tajribasini yaratish uchun texnologiyadan foydalanish imkoniyatini ko'rdik.",
-      "paragraph2": "Kichik omborxonada atigi 50 ta element bilan boshlab, biz turli toifalarda 1,200 dan ortiq uskunalarga o'sib, butun mamlakat bo'ylab minglab mamnun mijozlarga xizmat ko'rsatmoqdamiz."
+      "paragraph1": "Tezrent quruvchilar va texnologlar tomonidan, kerakli paytda kerakli asbob-uskunani olish qanchalik qiyinligini ko'rgach, yaratildi. Biz har qanday loyiha uchun uskunani ijaraga olish jarayonini sodda, shaffof va ishonchli qilishni maqsad qildik.",
+      "paragraph2": "Dastlabki bosqichlardan boshlab ilk mijozlarimiz bilan yaqindan ishladik va eng muhim narsalarga e'tibor qaratdik: sifatli uskuna, ishonchli xizmat va odamlarga ishini bajarishga yordam beradigan qulay tajriba."
     },
     "approach": {
       "paragraph1": "Bizning yondashuvimiz uchta asosiy tamoyilga asoslanadi: sifat, ishonchlilik va qulaylik. Har bir uskuna har bir ijaradan oldin qattiq texnik xizmat ko'rsatish va sinovdan o'tadi.",
@@ -277,7 +277,7 @@
     "stats": {
       "equipmentItems": "Uskuna elementlari",
       "satisfaction": "Mamnuniyat",
-      "servingSince": "2018 yildan buyon xizmat ko'rsatmoqda",
+      "servingSince": "Mijozga yo'naltirilgan xizmat",
       "trustedBy": "10,000+ mijozlar ishonadi"
     }
   },

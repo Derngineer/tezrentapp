@@ -21,11 +21,10 @@ export default function Header() {
       
       const sections = [
         "features",
-        "catalog",
+        "description",
         "contact",
         "about-us",
         "download",
-        "terms",
       ];
       let current = "";
       for (const section of sections) {
@@ -74,13 +73,13 @@ export default function Header() {
     };
   }, []);
 
+  const base = `/${locale}`;
   const navLinks = [
-    { href: "#features", label: tNav("features") },
-    { href: "#catalog", label: tNav("catalog") },
-    { href: "#contact", label: tNav("contact") },
-    { href: "#about-us", label: tNav("about") },
-    { href: "#download", label: tNav("download") },
-    { href: "#terms", label: tNav("terms") },
+    { href: `${base}#features`, label: tNav("features") },
+    { href: `${base}#description`, label: tNav("catalog") },
+    { href: `${base}#contact`, label: tNav("contact") },
+    { href: `${base}#about-us`, label: tNav("about") },
+    { href: `${base}#download`, label: tNav("download") },
   ];
 
   return (
@@ -121,7 +120,7 @@ export default function Header() {
           
           {/* Apply Button - now second after logo */}
           <Link
-            href="#contact"
+            href={`${base}#contact`}
             className="bg-blue-600 hover:bg-blue-700 text-white py-1.5 px-4 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg active:scale-95"
           >
             {tNav("applyButton") || "Apply"}
@@ -141,7 +140,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={`py-2 px-1 font-medium transition-all relative ${
-                activeSection === link.href.replace("#", "")
+                activeSection === link.href.split('#')[1]
                   ? "text-blue-600"
                   : "text-gray-700 hover:text-blue-600"
               }`}
@@ -149,7 +148,7 @@ export default function Header() {
               {link.label}
               <span
                 className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform origin-left transition-transform duration-300 ${
-                  activeSection === link.href.replace("#", "")
+                  activeSection === link.href.split('#')[1]
                     ? "scale-x-100"
                     : "scale-x-0"
                 }`}
@@ -161,7 +160,7 @@ export default function Header() {
 
           {/* Get Started button */}
           <Link
-            href="#download"
+            href={`${base}#download`}
             className="bg-gray-100 hover:bg-gray-200 text-blue-700 py-2 px-6 rounded-full font-medium transition-all transform hover:scale-105 shadow-md hover:shadow-lg active:scale-95"
           >
             {tNav("getStarted")}
@@ -214,7 +213,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={`py-2 px-1 font-medium transition-all relative ${
-                  activeSection === link.href.replace("#", "")
+                  activeSection === link.href.split('#')[1]
                     ? "text-blue-600 pl-4 border-l-2 border-blue-600"
                     : "text-gray-700 hover:text-blue-600"
                 }`}
@@ -230,7 +229,7 @@ export default function Header() {
             <div className="h-px bg-gray-200 my-4"></div>
 
             <Link
-              href="#download"
+              href={`${base}#download`}
               className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium transition-all text-center mt-4"
               onClick={() => setOpen(false)}
             >

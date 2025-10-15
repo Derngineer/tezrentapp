@@ -220,21 +220,7 @@ export default function FeaturesSection() {
                     ))}
                   </ul>
                   
-                  {/* Adjust link section */}
-                  <div className="mt-2 pt-2 border-t border-white/20">
-                    <a 
-                      href="#catalog" 
-                      className="text-white flex items-center text-xs sm:text-sm font-medium hover:text-blue-300 transition-colors"
-                    >
-                      {/* Make the explore text smaller */}
-                      <span className="truncate">
-                        {t('inventory.explore')}
-                      </span>
-                      <svg className="w-3 h-3 ml-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  </div>
+                  {/* Removed dead-end explore link */}
                 </div>
               </div>
             ))}
@@ -282,15 +268,7 @@ export default function FeaturesSection() {
                 </div>
               </div>
               
-              <a 
-                href="#catalog" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium inline-flex items-center transition-colors"
-              >
-                {t('smallEquipment.cta')}
-                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
+              {/* Removed dead-end small equipment CTA link */}
             </div>
             
             <div className="lg:w-1/2 grid grid-cols-2 gap-4">
@@ -459,12 +437,7 @@ export default function FeaturesSection() {
                 {t('cta.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="#catalog" 
-                  className="bg-white text-blue-700 hover:bg-blue-50 px-8 py-3 rounded-full font-semibold text-lg shadow-lg transition-all"
-                >
-                  {t('cta.browseButton')}
-                </a>
+                {/* Removed dead-end browse equipment button */}
                 <a 
                   href="#download" 
                   className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-full font-semibold text-lg transition-all"

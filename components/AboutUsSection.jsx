@@ -194,14 +194,7 @@ export default function AboutUsSection() {
                   <p className="text-gray-600 mb-4">
                     Including {t(`equipmentRange.categories.${category.id}.examples`)}
                   </p>
-                  <div className="pt-4 border-t border-gray-200">
-                    <a href="#catalog" className="text-blue-600 font-medium flex items-center hover:text-blue-800 transition-colors">
-                      {t('equipmentRange.browseCategory')}
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  </div>
+                  {/* Removed dead-end browse category link */}
                 </div>
               </div>
             ))}

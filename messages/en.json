@@ -15,14 +15,14 @@
   },
   "hero": {
     "badge": "Coming Soon",
-    "title": "Rent Heavy Machinery",
+    "title": "Rent Equipment for Every Need",
     "titleHighlight": "Easily",
-    "subtitle": "Find, compare, and rent the best construction equipment for your next project. Fast, reliable, and affordable.",
+    "subtitle": "From small items like cameras and power tools to generators and excavators—rent exactly what you need, when you need it. Fast, reliable, and affordable.",
     "cta": "Get the App",
     "downloadButton": "Download Now",
     "learnMoreButton": "Learn More",
     "appStore": "App Store",
-    "machineryOptions": "500+ Machinery Options",
+    "machineryOptions": "500+ Rental Options",
     "support": "24/7 Support",
     "videoFallback": "Your browser does not support the video tag.",
     "scroll": "Scroll"
@@ -191,8 +191,8 @@
       "paragraph2": "We've built a platform that simplifies equipment rental with transparent pricing, reliable maintenance, and exceptional customer support—ensuring you can focus on your project, not your tools."
     },
     "story": {
-      "paragraph1": "Founded in 2018 by a team of contractors and tech innovators, Tezrent was born from frustration with traditional equipment rental processes. We saw an opportunity to leverage technology to create a more efficient, user-friendly rental experience.",
-      "paragraph2": "Starting with just 50 items in a small warehouse, we've grown to over 1,200 pieces of equipment across multiple categories, serving thousands of satisfied customers nationwide."
+      "paragraph1": "Tezrent was created by builders and technologists who saw how hard it can be to get the right tools at the right time. We set out to make renting equipment simple, transparent, and reliable for every kind of project.",
+      "paragraph2": "From a scrappy start and close collaboration with early customers, we've focused on what matters: quality gear, dependable service, and a smooth experience that helps people get work done."
     },
     "approach": {
       "paragraph1": "Our approach centers on three core principles: quality, reliability, and convenience. Every piece of equipment undergoes rigorous maintenance and testing before each rental.",
@@ -256,7 +256,7 @@
     "stats": {
       "equipmentItems": "Equipment Items",
       "satisfaction": "Satisfaction",
-      "servingSince": "Serving Since 2018",
+      "servingSince": "Customer-focused service",
       "trustedBy": "Trusted by 10,000+ customers"
     }
   },
@@ -398,32 +398,32 @@
     "autoplayOff": "Autoplay Off",
     "items": {
       "0": {
-        "name": "Jane Doe",
+        "name": "Dmitry Orlov",
         "role": "Construction Manager",
         "text": "Excellent service! The machinery was top-notch and the process was seamless."
       },
       "1": {
-        "name": "John Smith",
+        "name": "Ahmed Al Mansour",
         "role": "Project Director",
         "text": "Quick delivery and very professional staff. Highly recommend for any project."
       },
       "2": {
-        "name": "Alice Johnson",
+        "name": "Sergei Ivanov",
         "role": "Site Engineer",
         "text": "Affordable rates and reliable equipment. Will rent again!"
       },
       "3": {
-        "name": "Michael Brown",
+        "name": "Ekaterina Smirnova",
         "role": "Contractor",
         "text": "Customer support was very helpful and responsive."
       },
       "4": {
-        "name": "Emily Davis",
+        "name": "Hussein Al Haddad",
         "role": "Operations Manager",
         "text": "The best rental experience I've had. Everything was as promised."
       },
       "5": {
-        "name": "Chris Lee",
+        "name": "Aisha Mansour",
         "role": "Independent Builder",
         "text": "Easy booking and great selection of machinery."
       }

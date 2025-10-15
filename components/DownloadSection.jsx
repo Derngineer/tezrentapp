@@ -3,10 +3,11 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaBell, FaCheckCircle, FaEnvelope, FaArrowRight } from "react-icons/fa";
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function DownloadSection() {
   const t = useTranslations('downloadSection');
+  const locale = useLocale();
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -30,7 +31,7 @@ export default function DownloadSection() {
   ];
 
   return (
-    <section className="relative py-12 bg-gradient-to-br from-blue-50 via-blue-50 to-indigo-50 overflow-hidden">
+  <section className="relative py-4 md:py-6 bg-gradient-to-br from-blue-50 via-blue-50 to-indigo-50 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-10 right-10 w-64 h-64 bg-blue-200 rounded-full opacity-20 blur-3xl"></div>
@@ -185,7 +186,7 @@ export default function DownloadSection() {
                     <div className="ml-3 text-sm">
                       <label htmlFor="terms" className="text-gray-500">
                         {t('terms.agree')}{" "}
-                        <Link href="#terms" className="text-blue-600 hover:text-blue-800 underline">
+                        <Link href={`/${locale}/terms-and-conditions`} className="text-blue-600 hover:text-blue-800 underline">
                           {t('terms.termsLink')}
                         </Link>
                         {" "}{t('terms.and')}{" "}
@@ -200,62 +201,6 @@ export default function DownloadSection() {
             </div>
           </div>
         </div>
-        
-        {/* Enhanced Footer */}
-        <footer className="w-full mt-24 border-t border-blue-200 pt-12 px-4">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="col-span-1 md:col-span-2">
-              <h3 className="font-bold text-xl text-blue-900 mb-4">Tezrent</h3>
-              <p className="text-gray-600 mb-4">
-                {t('footer.description')}
-              </p>
-              <div className="flex space-x-4">
-                {["facebook", "twitter", "instagram", "linkedin"].map((social) => (
-                  <a
-                    key={social}
-                    href="#"
-                    className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition"
-                  >
-                    <span className="sr-only">{social}</span>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
-                    </svg>
-                  </a>
-                ))}
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold text-blue-900 mb-4">{t('footer.company.title')}</h4>
-              <ul className="space-y-2">
-                {["about", "careers", "blog", "press"].map((item, index) => (
-                  <li key={item}>
-                    <Link href="#" className="text-gray-600 hover:text-blue-600 transition">
-                      {t(`footer.company.links.${index}`)}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold text-blue-900 mb-4">{t('footer.legal.title')}</h4>
-              <ul className="space-y-2">
-                {["terms", "privacy", "cookies", "licenses"].map((item, index) => (
-                  <li key={item}>
-                    <Link href={`#${item}`} className="text-gray-600 hover:text-blue-600 transition">
-                      {t(`footer.legal.links.${index}`)}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-blue-100 mt-12 pt-6 text-center text-gray-600 text-sm">
-            &copy; {new Date().getFullYear()} {t('footer.copyright')}
-          </div>
-        </footer>
       </div>
     </section>
   );

@@ -7,9 +7,8 @@ import FeaturesSection from '../../components/FeaturesSection';
 import AboutUsSection from '../../components/AboutUsSection';
 import ClientForm from '../../components/ClientForm';
 import ReviewsCarousel from '../../components/ReviewsCarousel';
-import MobileMockups from '../../components/MobileMockups';
-import TermsAndConditions from '../../components/TermsAndConditions';
 import DownloadSection from '../../components/DownloadSection';
+import Footer from '../../components/Footer';
 
 export default function Home() {
   const t = useTranslations('hero');
@@ -33,7 +32,7 @@ export default function Home() {
               <AboutUsSection />
             </div>
           </section>
-                    <section id="description" className="bg-white section-block py-6 md:py-8">
+          <section id="description" className="bg-white section-block py-6 md:py-8">
             <div className="section-inner">
               <DescriptionSection />
             </div>
@@ -43,28 +42,19 @@ export default function Home() {
               <ClientForm />
             </div>
           </section>
-          <section className="bg-white section-block py-6 md:py-8">
+          <section className="bg-white section-block pb-4 md:pb-6 pt-6 md:pt-8">
             <div className="section-inner">
               <ReviewsCarousel />
             </div>
           </section>
-          <section className="bg-white section-block py-6 md:py-8">
-            <div className="section-inner">
-              <MobileMockups />
-            </div>
-          </section>
-          <section id="terms" className="bg-white section-block py-6 md:py-8">
-            <div className="section-inner">
-              <TermsAndConditions />
-            </div>
-          </section>
-          <section id="download" className="bg-white section-block py-6 md:py-8">
+          <section id="download" className="bg-white section-block -mt-2 md:-mt-3 pt-0 pb-4 md:pt-0 md:pb-6">
             <div className="section-inner">
               <DownloadSection />
             </div>
           </section>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

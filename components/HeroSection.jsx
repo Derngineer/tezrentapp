@@ -128,7 +128,7 @@ export default function HeroSection() {
           {/* Buttons with translations - Smaller on small screens */}
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-start w-full sm:w-auto">
             <a
-              href="#catalog"
+              href="#description"
               className="bg-white text-blue-700 px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold text-sm sm:text-base lg:text-lg shadow-lg hover:bg-blue-700 hover:text-white transition-all duration-300 border border-white flex-grow sm:flex-grow-0 text-center"
             >
               {t('downloadButton')}
