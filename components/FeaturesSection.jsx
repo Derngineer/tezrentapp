@@ -194,15 +194,9 @@ export default function FeaturesSection() {
             {equipmentShowcase.map((category, index) => (
               <div 
                 key={index}
-                className="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-blue-600 to-purple-700"
               >
-                <div className="aspect-w-16 aspect-h-9 relative">
-                  <div className="w-full h-48 relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-700 z-10"></div>
-                  </div>
-                </div>
-                
-                <div className="absolute inset-0 z-20 p-3 flex flex-col justify-end">
+                <div className="p-3 flex flex-col">
                   {/* Adjust heading size dynamically based on text length */}
                   <h4 className={`font-bold text-white mb-2 ${
                     category.name.length > 15 ? 'text-lg' : 'text-xl'
@@ -214,13 +208,11 @@ export default function FeaturesSection() {
                   <ul className="space-y-0.5">
                     {category.items.map((item, i) => (
                       <li key={i} className="text-white/90 text-xs sm:text-sm flex items-start">
-                        <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 mt-1.5"></span>
+                        <span className="w-1.5 h-1.5 bg-blue-300 rounded-full mr-2 mt-1.5"></span>
                         <span className="flex-1 line-clamp-2">{item}</span>
                       </li>
                     ))}
                   </ul>
-                  
-                  {/* Removed dead-end explore link */}
                 </div>
               </div>
             ))}
